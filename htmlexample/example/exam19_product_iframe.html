@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>상품 안내 페이지</title>
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+    <h1>전자제품 상품 안내</h1>
+
+    <p>
+        상품 목록에서 상세 보기를 클릭하면 아래 iframe 영역에 상품 설명이 표시
+    </p>
+    <table>
+        <caption>상품 목록</caption>
+        <tr>
+            <th>이미지</th>
+            <th>상품명</th>
+            <th>가격</th>
+            <th>상세 정보</th>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fthumbnail.coupangcdn.com%2Fthumbnails%2Fremote%2F492x492ex%2Fimage%2Fretail%2Fimages%2F8586477756181-88f2ed1b-1f7c-4e3a-95cd-797be019f3b6.jpg&type=a340" alt="노트북이미지" width="120">
+            </td>
+            <td>노트북</td>
+            <td>1,200,000원</td>
+            <td>
+                <a href="laptop_detail.html" target="detailFrame">상세 보기</a>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fshop1.phinf.naver.net%2F20240322_107%2F1711087663116xuYNw_JPEG%2F1132640451571389_502898355.jpeg&type=a340" alt="태블릿이미지" width="120">
+            </td>
+            <td>태블릿</td>
+            <td>700,000원</td>
+            <td>
+                <a href="tablet_detail.html" target="detailFrame">상세 보기</a>
+            </td>
+        </tr>
+    </table>
+
+<h2>상품 상세 설명</h2>
+    <iframe 
+        src="laptop_detail.html" 
+        name="detailFrame"
+        title="상품 상세 설명 영역"
+        width="700"
+        height="300"
+        >
+    </iframe>
+
+    <h2>수업 내용</h2>
+    <p>
+        공지사항을 확인한 후 수업 자료를 준비해 주세요.
+    </p>        
+</body>
+</html>

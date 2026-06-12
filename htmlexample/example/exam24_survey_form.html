@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>강의 만족도 설문조사</title>
+    <!-- <link rel="stylesheet" href="/css/table.css"> -->
+</head>
+<body>
+  <h1>강의 만족도 설문조사</h1>
+  <p>
+    오늘 수업에 대한 의견을 작성해 주세요.
+    </p>
+
+  <form method="post">
+    <fieldset>
+        <legend>기본 정보</legend>
+
+        <p>
+            <label for="studentName">이름</label><br>
+            <input type="text" id="studentName" name="studentName" placeholder="제목 입력">
+        </p>
+
+        <p>
+            <label for="className">수강 과정</label>
+            <select name="className" id="className">
+                <option value="html">HTML 기초</option>
+                <option value="css">CSS 기초</option>
+                <option value="javascript">JavaScript 기초</option>
+            </select>
+        </p>
+    </fieldset>
+    <fieldset>
+        <legend>설문내용</legend>
+
+        <p>
+            오늘 수업 난이드는 어땠나요? <br>
+            <input type="radio" id="easy" name="level" value="easy">
+            <label for="easy">쉬움</label>
+
+            <input type="radio" id="normal" name="level" value="normal">
+            <label for="normal">보통</label>
+
+            <input type="radio" id="hard" name="level" value="hard">
+            <label for="hard">어려움</label>
+        
+        </p>
+
+        <p>
+            도움이 되었던 내용은 무엇인가요? <br>
+            <input type="checkbox" id="formTag" name="helpgul" value="form">
+            <label for="formTag">form 태그</label>
+        
+            <input type="checkbox" id="inputTag" name="helpgul" value="form">
+            <label for="inputTag">input 태그</label>
+
+            <input type="checkbox" id="selectTag" name="helpgul" value="form">
+            <label for="selectTag">select 태그</label>
+
+            <input type="checkbox" id="textareaTag" name="helpgul" value="form">
+            <label for="textareaTag">textarea 태그</label>
+        </p>
+
+        <p>
+            <label for="opinion">수업에 대한 의견</label><br>
+            <textarea id="opinion" name="opinion" rows="8" cols="60" placeholder="의견을 자유롭게 입력"></textarea>
+        </p>
+
+    
+    </fieldset>
+    <p>
+        <button type="submit">설문 제출</button>
+        <button type="reset">다시 작성</button>
+    </p>
+
+  </form>
+
+</body>
+</html>

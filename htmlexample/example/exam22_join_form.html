@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>회원가입 페이지</title>
+    <!-- <link rel="stylesheet" href="/css/table.css"> -->
+</head>
+<body>
+  <h1>회원가입</h1>
+  <p>
+    회원가입에 필요한 정보를 입력해 주세요.
+</p>
+
+  <form method="post">
+    <fieldset>
+        <legend> 기본 정보</legend>
+
+        <p>
+            <label for="userName">이름</label><br>
+            <input type="text" id="userName" placeholder="이름 입력">
+        </p>
+
+        <p>
+            <label for="userId">ID</label><br>
+            <input type="text" id="userId" placeholder="ID 입력">
+        </p>
+
+        <p>
+            <label for="userPw">PW</label><br>
+            <input type="text" id="userPw" placeholder="PW 입력">
+        </p>
+
+        <p>
+            <legend for="email">Email</legend><br>
+            <input type="text" id="email" placeholder="example@email.com">
+        </p>
+    </fieldset>
+
+<fieldset>
+        <legend>추가 정보</legend>
+
+        <p>
+            <input type="radio" id="male" name="gender" value="M">
+            <label for="male">남자</label>
+        
+            <input type="radio" id="female" name="gender" value="F">
+            <label for="female">여자</label>
+        </p>
+
+        <p>
+            <label for="region">거주 지역</label><br>
+            <select name="region" id="region">
+                <option value="">지역선택</option>
+                <option value="seoul">서울</option>
+                <option value="busan">부산</option>
+                <option value="incheon">인천</option>
+                <option value="jeju">제주</option>
+            </select>
+        </p>
+
+        <p>
+            관심 분야 <br>
+            <input type="checkbox" id="html" name="interest" value="HTML">
+            <label for="html">HTML</label>
+        
+            <input type="checkbox" id="css" name="interest" value="CSS">
+            <label for="css">CSS</label>
+
+            <input type="checkbox" id="js" name="interest" value="JavaScript">
+            <label for="js">JavaScript</label>
+        </p>
+    </fieldset>
+
+    <p>
+        <button type="submit">가입 하기</button>
+        <button type="reset">다시 작성</button>
+    </p>
+
+
+    
+  </form>
+
+</body>
+</html>

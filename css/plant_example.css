@@ -1,0 +1,88 @@
+ body {
+            max-width: 700px;
+            margin: 25px auto;
+            font-family: '나눔고딕', '맑은 고딕', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2e3a1f;
+            background-color: #fbfdf6;
+            padding: 0 15px;
+        }
+        h1 {
+            color: #3a5d00;
+            font-size: 2.5em;
+            border-bottom: 3px solid #7b9a28;
+            padding-bottom: 8px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #4c7320;
+            font-size: 1.8em;
+            border-bottom: 2px solid #a2bf43;
+            padding-bottom: 6px;
+            margin-top: 35px;
+            margin-bottom: 18px;
+        }
+        p {
+            font-size: 1.05em;
+            color: #40521a;
+            margin-bottom: 22px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background-color: #e8f0d9;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 6px rgba(55, 71, 12, 0.1);
+        }
+        caption {
+            font-size: 1.2em;
+            font-weight: 700;
+            padding: 10px 0;
+            color: #4a651f;
+        }
+        th, td {
+            text-align: left;
+            padding: 10px 15px;
+            border-bottom: 1px solid #b9ce7a;
+        }
+        th {
+            background-color: #c8d9a0;
+            font-weight: 700;
+            color: #415e07;
+            width: 15%;
+        }
+        td{
+            width: 45%;
+        }
+        ol {
+            padding-left: 30px;
+            color: #4a5c09;
+            margin-bottom: 30px;
+        }
+        ol li {
+            margin-bottom: 14px;
+            font-size: 1.04em;
+            line-height: 1.5;
+        }
+        ol li br {
+            margin-bottom: 6px;
+        }
+        hr {
+            border: none;
+            height: 1.5px;
+            background: linear-gradient(to right, transparent, #7b9a28, transparent);
+            margin: 35px 0;
+            opacity: 0.6;
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(124, 138, 64, 0.3);
+            margin: 15px 0 25px 0;
+        }
+
+        
