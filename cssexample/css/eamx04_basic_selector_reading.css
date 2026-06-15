@@ -1,0 +1,18 @@
+        * {
+            font-family: "맑은 고딕", sans-serif;
+        }
+        h1{
+            color: #8b5e3c;
+            background-color: #fff3d6;
+            padding: 10px;
+        }
+
+        p{
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        li{
+            color: #6b4f3f;
+            margin: 5px;
+        }

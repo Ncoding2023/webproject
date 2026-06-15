@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Git Helper</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+        }
+
+        #copyMessage{
+            color: green;
+            margin-top: 10px;
+            font-weight: bold;
+            height: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <h2>Git 설정 생성기</h2>
+
+    <label>GitHub User Name</label>
+    <input type="text" id="username" placeholder="MyUserName">
+
+    <label>GitHub Email</label>
+    <input type="text" id="email" placeholder="MyEmail">
+
+    <label>GitHub Email</label>
+    <input type="text" id="repository" placeholder="MyRepository">
+
+    <button onclick="createGitConfig()">
+        명령어 생성
+    </button>
+
+    <h3>생성 결과</h3>
+
+    <pre id="result"></pre>
+
+    <button onclick="copyCommand()">
+        복사
+    </button>
+
+    <button onclick="copyGitConfig()">
+        Git 사용자 설정
+    </button>
+
+    <button onclick="copyRemoveCredential()">
+        기존 사용자 제거
+    </button>
+
+    <button onclick="copyCheckConfig()">
+        현재 설정 확인
+    </button>
+
+    <button onclick="copyRemote()">
+        원격 저장소 연결
+    </button>
+
+    <button onclick="copyPush()">
+        첫 Push
+    </button>
+
+    <div id="copyMessage"></div>
+
+    <script>
+
+        function createGitConfig() {
+
+            const username = !document.getElementById("username").value  ?
+                "username" : document.getElementById("username").value;
+
+            const email = !document.getElementById("email").value ?
+                "email" : document.getElementById("email").value;
+
+            const repository = !document.getElementById("repository").value ?
+                "repository" : document.getElementById("repository").value;
+
+            const command = `git config --global user.name "${username}"
+git config --global user.email "${email}"
+git remote add origin https://github.com/"${username}"/"${repository}"
+git remote -v`;
+
+            document.getElementById("result").textContent =
+                command;
+        }
+
+
+        function copyGitConfig() {
+
+            const username =
+                document.getElementById("username").value;
+
+            const email =
+                document.getElementById("email").value;
+
+            const cmd =
+                `git config --global user.name "${username}"
+git config --global user.email "${email}"`;
+
+            copyText(cmd);
+        }
+
+        function copyRemoveCredential() {
+
+            const cmd =
+                `git config --global --unset user.name
+git config --global --unset user.email
+
+cmdkey /list`;
+
+            copyText(cmd);
+        }
+
+        function copyCheckConfig() {
+
+            const cmd =
+                `git config --global --list
+git config --global --show-origin user.name
+git config --global --show-origin user.email`;
+
+            copyText(cmd);
+        }
+
+        function copyRemote() {
+
+            const cmd =
+                `git remote add origin https://github.com/계정명/저장소명.git
+git remote -v`;
+
+            copyText(cmd);
+        }
+
+        function copyPush() {
+
+            const cmd =
+                `git add .
+git commit -m "first commit"
+git branch -M main
+git push -u origin main`;
+
+            copyText(cmd);
+        }
+
+        function copyCommand() {
+
+            const text =
+                document.getElementById("result").textContent;
+
+            navigator.clipboard.writeText(text);
+
+            // alert("복사 완료");
+            const msg =
+            document.getElementById("copyMessage");
+
+            msg.textContent = "✅ 복사되었습니다.";
+
+            setTimeout(() => {
+                msg.textContent = "";
+            }, 1500);
+        }
+
+        // 호환성으로 변경
+        function copyText(text) {
+
+            const textarea =
+                document.createElement("textarea");
+
+            textarea.value = text;
+
+            document.body.appendChild(textarea);
+
+            textarea.select();
+
+            document.execCommand("copy");
+
+            document.body.removeChild(textarea);
+
+            document.getElementById("result").textContent = text;
+
+            // alert("복사 완료");
+            const msg =
+                document.getElementById("copyMessage");
+
+            msg.textContent = "✅ 복사되었습니다.";
+
+            setTimeout(() => {
+                msg.textContent = "";
+            }, 1500);
+        }
+    </script>
+</body>
+
+</html>
