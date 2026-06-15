@@ -1,0 +1,30 @@
+div[class^="book"] {
+    font-weight: bold;
+    margin: 10px 0;
+    color: darkblue;
+}
+
+div[class^="book_korean"] {
+    font-family: "맑은 고딕", sans-serif;
+}
+
+div[class^="book_forign"] {
+    font-family: "Comic Sans MS", cursive;
+}
+
+a[href$=".pdf"] {
+    background-color: #ffe5e5;
+    padding: 3px 8px;
+    color: crimson;
+}
+
+a[href$=".ppt"] {
+    background-color: #e5ffe9;
+    padding: 3px 8px;
+    color: green;
+}
+
+a[target="_blank"] {
+    font-style: italic;
+    text-decoration: underline;
+}

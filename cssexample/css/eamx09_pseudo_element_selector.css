@@ -1,0 +1,27 @@
+p::first-letter {
+    font-size: 36px;
+    color: #c75b39;
+    font-weight: bold;
+}
+
+p::first-line {
+    color: #5c4033;
+    font-weight: bold;
+}
+
+h2::before {
+    content: "★";
+    color: orange;
+}
+
+h2::after {
+    content: "★";
+    color: orange;
+}
+
+
+.notice::before {
+    content: "안내";
+    color: red;
+    font-weight: bold;
+}
