@@ -1,0 +1,30 @@
+.travel p {
+    color: #5c4033;
+    line-height: 1.6;
+}
+
+.travel > p {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #fff3d6;
+    padding: 10px;
+}
+
+.travel span {
+    color: #c75b39;
+    font-weight: bold;
+}
+
+.travel > ul {
+    border: 2px solid #d6bfa8;
+    padding: 15px;
+    width: 400px;
+    background-color: #fffdf7;
+}
+
+.travel > ul > li {
+    margin: 8px;
+    color: #2f6cb0;
+    font-weight: bold;
+}
+

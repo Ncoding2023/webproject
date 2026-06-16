@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>선택자의 우선순위</title>
+    <link rel="stylesheet" href="../css/eamx13_prioritize.css">
+</head>
+
+<body>
+    <h1>훈련 과정 공지사항</h1>
+
+    <div class="notice-box">
+        <p>
+            일반 공지사항입니다.
+        </p>
+
+        <p class="notice">
+            클래스 선택자가 적용된 공지사항입니다.
+        </p>
+
+        <p class="notice" id="important-notice">
+            아이디 선택자가 적용된 중요 공지사항입니다.
+        </p>
+
+        <p class="notice" id="important-notice" style="color: purple; font-size: 30px;">
+            인라인 스타일 적용된 중요 공지사항입니다.
+        </p>
+
+        <p class="notice warning" id="important-notice" style="color: purple; font-size: 30px;">
+            !important 적용된 긴급 공지사항입니다.
+        </p>
+
+        <span>
+            이 문장은 div의 글자 색상을 상속받는다.
+        </span>
+    </div>
+
+</body>
+
+</html>

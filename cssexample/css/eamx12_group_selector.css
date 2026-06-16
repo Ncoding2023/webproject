@@ -1,0 +1,17 @@
+h1, h2, p {
+    font-family: "맑은 고딕", Arial,  sans-serif;
+}
+
+h1, h2 {
+    color: #8b5e3c;
+}
+
+p, li {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.important, .notice {
+    font-weight: bold;
+    color: #c75b39;
+}

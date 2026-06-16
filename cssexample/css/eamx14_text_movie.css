@@ -1,0 +1,48 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "맑은 고딕",Arial, sans-serif;
+    margin: 30px;
+    color: #333333;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #5C4033;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-style: italic;
+    text-align: center;
+    color: #8b5e3c;
+}
+
+.movie-info {
+    width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #FFF7E8;
+}
+
+.movie-info p{
+    font-size: 1rem;
+    line-height: 1.7;
+    text-indent: 20px;
+}
+    
+.english-title {
+    font-variant: small-caps;
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #c75b39;
+}
+
+.highlight {
+    font-weight: bold;
+    text-decoration: underline;
+}

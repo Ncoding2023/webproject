@@ -1,0 +1,41 @@
+/* 전체 선택자: 가장 낮은 우선순위 */
+* {
+    font-family: "맑은 고딕",Arial, sans-serif;
+    color: gray;
+}
+/* 태그 선택자 */
+p {
+    color: #2b6cb6;
+    font-size: 18px;
+}
+/* 클래스 선택자 */
+.notice {
+    color: #2f855a;
+    font-weight: bold;
+}
+/* 아이디 선택자 */
+#important-notice   {
+    color: #c75b39;
+    font-size: 24px;
+}
+/* 같은 태그 선택자라면 나중에 작성된 스타일이 우선 적용 */
+h1  {
+    color: navy;
+}
+
+h1  {
+    color: #8b5e3c;
+}
+
+/* 상속 확인용 */
+.notice-box {
+    color: #444444;
+    border:  2px solid #d6bfa8;
+    background-color: #fff7e8;
+    padding: 15px;
+    width: 650px;
+}
+/* !important 가장 높은 우선순위 */
+.warning    {
+    color: red !important;
+}

@@ -1,0 +1,50 @@
+body {
+    font-family: "맑은 고딕",Arial, sans-serif;
+    background-color: #fffdf7;
+    color: #333333;
+    margin: 30px;
+}
+
+h1 {
+    color: #2f855a;
+    text-align: center;
+}
+
+h2 {
+    color: #5c4033;
+    margin-top: 30px;
+}
+
+.care-list {
+    list-style-type: square;
+    list-style-position: inside;
+    width: 550px;
+    padding: 15px;
+    border:  2px solid #b7d7b0;
+    background-color: #ffffff;
+}
+
+.care-list li {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+.step-list {
+    list-style-type: upper-alpha;
+    width: 500px;
+    padding: 20px 40px;
+    border:  2px solid #d6bfa8;
+    background-color: #fff7e8;
+}
+
+.step-list li {
+    margin: 8px 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.warning-list {
+    list-style: circle outside;
+    color: #c75b39;
+    font-weight: bold;
+}

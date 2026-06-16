@@ -1,0 +1,60 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "맑은 고딕",Arial, sans-serif;
+    margin: 30px;
+    color: #333333;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #2b6cb0;
+    text-align: center;
+}
+
+.weather-card {
+    width: 620px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #eaf6ff;
+}
+
+.city {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2f855a;
+}
+
+
+.summary{
+    font-size: 1rem;
+    line-height: 1.6;
+}
+    
+.warning {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #c75b39;
+    text-decoration: underline;
+}
+
+.english {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    word-spacing: 6px;
+    color: #5c4033;
+}
+
+.small-text {
+    font-size: 0.875rem;
+    text-align: right;
+    color: gray;
+}
+
+.alien-block-regular {
+  font-family: "Alien Block", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}

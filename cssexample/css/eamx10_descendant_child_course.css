@@ -1,0 +1,18 @@
+.course p{
+    color: #2b6cb0;
+    font-weight: bold;
+}
+
+.course > p{
+    background-color: #e6f7ff;
+    padding: 10px;
+}
+
+.course li{
+    color: #2f855a;
+}
+
+.course > ul{
+    border: 2px solid #bbd7f0;
+    width: 350px;
+}

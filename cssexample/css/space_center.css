@@ -1,0 +1,76 @@
+body {
+    font-family: "맑은 고딕",Arial, sans-serif;
+    margin: 0;
+/*     
+    background-color: #f8fff7;
+    background-image: url("../image/forest_bg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover; 
+    */
+
+    background: #f8fff7 url(https://th.bing.com/th/id/OIP.Kc809ww5ng8659qrAbRN2AHaEK?w=296&h=180&c=7&r=0&o=7&pid=1.7&rm=3) no-repeat fixed center center /cover;
+    
+}
+
+
+h1{
+    color: orange;
+    text-align: center;
+}
+
+table {
+    width: 860px;
+    margin: 20px auto;
+
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+caption {
+    caption-side: top;
+    font-size: 24px;
+    font-weight: bold;
+    color: #51c739;
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #bbd7f0;
+    padding: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #c75b39;
+    color: white;
+}
+
+td{
+    background-color: #fff7e8;
+}
+
+.subject {
+    font-weight: bold;
+    color: #c75b39;
+}
+
+.closed {
+    color: red;
+    font-weight: bold;
+}
+
+.available {
+    color: #2f855a;
+    font-weight: bold;
+}
+
+.note {
+    width: 760px;
+    color: greenyellow;
+    font-size: 14px;
+    text-align: right;
+    margin: 10px auto;
+}

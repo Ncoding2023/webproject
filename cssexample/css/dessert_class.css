@@ -1,0 +1,68 @@
+body {
+    font-family: "맑은 고딕",Arial, sans-serif;
+    color: #fffdf7;
+    margin: 30px;
+
+    background: #f8fff7 url(
+        https://th.bing.com/th/id/OIP.IiJN09clu8OcB6NDESCC3QHaHa?w=216&h=216&c=7&r=0&o=7&pid=1.7&rm=3
+    ) no-repeat fixed center center /cover;
+}
+
+h1 {
+    color:  #fff;
+    text-align: center;
+}
+
+.dessert_class-card {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: #fff;
+    border-radius: 15px;
+
+    /* background-color: #fffdf8; */
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+
+    border-bottom:  2px dashed  #fff;
+    padding-bottom: 10px;
+}
+
+
+.info {
+    font-size: 18px;
+    line-height: 1.6;
+    color:  #fff;
+}
+    
+.notice {
+    padding: 10px;
+    margin-top: 15px;
+
+    border:  2px dotted  #fff;
+    border-radius: 8px;
+
+    color:  #fff;
+    font-weight: bold;
+}
+
+.ticket {
+    width: 200px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+
+    border: 4px double  #fff;
+    border-radius: 20px;
+
+    color:  #fff;
+    font-weight: bold;
+    /* background-color: white; */
+}

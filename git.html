@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Git Helper</title>
+    <title>Git 명령어 모음</title>
 
     <style>
         body {
@@ -44,13 +44,13 @@
     <h2>Git 설정 생성기</h2>
 
     <label>GitHub User Name</label>
-    <input type="text" id="username" placeholder="MyUserName">
+    <input type="text" id="username" placeholder="gitHub 이름">
 
     <label>GitHub Email</label>
-    <input type="text" id="email" placeholder="MyEmail">
+    <input type="text" id="email" placeholder="gitHub 이메일">
 
-    <label>GitHub Email</label>
-    <input type="text" id="repository" placeholder="MyRepository">
+    <label>GitHub Repository</label>
+    <input type="text" id="repository" placeholder="gitHub 저장소 URL">
 
     <button onclick="createGitConfig()">
         명령어 생성
@@ -74,7 +74,7 @@
     </button>
 
     <button onclick="copyRemoveCredential()">
-        이전 사용자 제거
+        사용자 제거
     </button>
 </div>
 
@@ -94,7 +94,7 @@
     </button>
 
     <button onclick="copyClone()">
-        저장소 복사
+        저장소 복사 받기
     </button>
 </div>
 
@@ -108,35 +108,36 @@
     <button onclick="copyBranch()">
         현재 브랜치 확인
     </button>
-
+<!-- 
     <button onclick="copyAdd()">
         Add
+    </button> 
+-->
+
+    <button onclick="copyPush()">
+        최초 Push
+    </button>
+
+    <button onclick="copyPushUpdate()">
+        일반 Push
+    </button>
+
+    <button onclick="copyPull()">
+        Pull
     </button>
 
     <button onclick="copyCommit()">
         Commit
     </button>
 
-    <button onclick="copyPush()">
-        Push
-    </button>
-
-    <button onclick="copyPull()">
-        Pull
+    <button onclick="copyCommitMail()">
+        커밋메세지 예시
     </button>
 </div>
 
-<!-- 
-<div class="section">
-    <h2>📥 저장</h2>
-    <button onclick="copyClone()">
-        저장소 복사
-    </button>
-    
-</div> 
--->
 
-<h3>생성 결과</h3>
+
+<h3>생성 결과 (메모장에 복사해서 사용)</h3>
 
 <pre id="result"></pre>
 <div id="copyMessage"></div>
@@ -154,9 +155,9 @@
             const repository = !document.getElementById("repository").value ?
                 "repository" : document.getElementById("repository").value;
 
-            const command = `git config --global user.name "${username}"
-git config --global user.email "${email}"
-git remote add origin https://github.com/"${username}"/"${repository}"
+            const command = `git config --global user.name ${username}
+git config --global user.email ${email}
+git remote add origin ${repository}
 git remote -v`;
 
             document.getElementById("result").textContent =
@@ -173,8 +174,8 @@ git remote -v`;
                 document.getElementById("email").value;
 
             const cmd =
-                `git config --global user.name "${username}"
-git config --global user.email "${email}"`;
+                `git config --global user.name ${username}
+git config --global user.email ${email}`;
 
             copyText(cmd);
         }
@@ -184,8 +185,9 @@ git config --global user.email "${email}"`;
             const cmd =
                 `git config --global --unset user.name
 git config --global --unset user.email
-
-cmdkey /list`;
+cmdkey /list    //자격 증명 확인 목록
+cmdkey /delete:git:https://github.com   //자격 증명 목록 삭제
+`;
 
             copyText(cmd);
         }
@@ -209,7 +211,7 @@ git remote -v`;
             copyText(cmd);
         }
 
-        function copyPush() {
+function copyPush() {
 
             const cmd =
                 `git add .
@@ -220,7 +222,17 @@ git push -u origin main`;
             copyText(cmd);
         }
 
-        function copyCommand() {
+function copyPushUpdate(){
+
+    copyText(
+`git status
+git add .
+git commit -m "커밋메시지"
+git push`
+    );
+}
+
+function copyCommand() {
 
             const text =
                 document.getElementById("result").textContent;
@@ -237,13 +249,12 @@ git push -u origin main`;
                 msg.textContent = "";
             }, 1500);
         }
-        function copyCheckConfig(){
+
+ function copyCheckConfig(){
 
     copyText(
 `git config --global --list
-
 git config --global --show-origin user.name
-
 git config --global --show-origin user.email`
     );
 }
@@ -271,7 +282,7 @@ function copyRemote(){
         document.getElementById("repository").value;
 
     copyText(
-`git remote add origin https://github.com/${username}/${repository}.git`
+`git remote add origin ${repository}`
     );
 }
 
@@ -303,24 +314,42 @@ function copyCommit(){
     );
 }
 
-function copyPush(){
+// function copyPush(){
 
-    copyText(
-`git push -u origin main`
-    );
-}
+//     copyText(
+// `git push -u origin main`
+//     );
+// }
 
 function copyPull(){
 
     copyText(
-`git pull origin main`
+`git branch
+git remote -v
+git pull origin main`
+    );
+}
+
+function copyCommitMail(){
+
+    copyText(
+`
+init:    프로젝트 시작
+feat:    기능 추가
+fix:     버그 수정
+docs:    문서 작성
+study:   학습 기록
+외에 본인 자율적으로 문구 기록
+`
     );
 }
 
 function copyClone(){
+    const repository =
+        document.getElementById("repository").value;
 
     copyText(
-`git clone 저장소주소`
+`git clone ${repository}`
     );
 }
 
