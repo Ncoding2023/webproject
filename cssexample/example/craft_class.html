@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang='ko'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>실습 4</title>
+    <link rel="stylesheet" href="../css/craft_class.css">
+</head>
+
+<!-- 
+전통 공예 체험 안내 페이지
+
+문단, 목록, 테이블, 배경 이미지, 박스 모델 속성 등 활용
+
+제목,
+ 전통 공예 체험 소개,
+  체험 가능한 공예 목록,
+   체험 순서 목록,
+    안내 또는 주의 문구 등의 내용을 포함
+-->
+<body>
+    <h1>북촌전통공예체험관</h1>
+    <div class="box-model">
+        <span class="label">소개</span>
+            <p>우리나라의 우수한 전통공예를 소개, 체험할 수 있는 곳입니다. 요일별로 3가지씩 서로 다른 공예 체험 프로그램이 운영되고 있어, 원하는 전통공예를 취향에 따라 선택해 체험해 볼 수 있습니다.</p>
+            <p>주소:	서울특별시 종로구 북촌로12길 24-5</p>
+            <p>지하철:	안국역 2번 출구 (도보 12분)</p>
+            <p>시설이용료:	8,000원~20,000원</p>
+
+        <div class="border-area">
+        <span class="label">체험 가능한 공예 목록</span>
+
+        <table>
+        <!-- <caption>2026년 상・하반기 교육 과정</caption> -->
+
+        <tr>
+            <th>행사</th>
+            <th>신청 기간</th>
+            <th>이용 기간</th>
+        </tr>
+
+        <tr>
+            <td class="subject">계동마님 이야기</td>
+            <td>2026-02-22~2026-12-31</td>
+            <td class="closed">2026-03-08~2026-12-31</td>
+        </tr>
+
+        <tr>
+            <td class="subject">한옥의 아침</td>
+            <td>2026-02-21~2026-12-31</td>
+            <td class="available">2026-03-07~2026-12-31</td>
+        </tr>
+
+        <tr>
+            <td class="subject">Guided Tour</td>
+            <td>2026-01-01~2026-12-31</td>
+            <td class="available">2026-01-01~2026-12-31</td>
+        </tr>
+
+        <!-- <tr>
+            <td class="subject">Spring Boot 프로젝트</td>
+            <td>2026.09.01 ~ 2026.09.30</td>
+            <td class="closed">마감</td>
+        </tr> -->
+    </table>
+
+            <div class="padding-area">
+            <span class="label">안내 사항</span> <br>
+            하단의 버튼들을 이용해서 찾으시는 용무를 선택해주세요.
+            <div class="content-area">
+                <button><a href="https://hanok.seoul.go.kr/front/kor/exp/expTip.do" target="detailFrame">한옥체험 Tip</a></button>
+                <button><a href="https://hanok.seoul.go.kr/front/kor/service.do" target="detailFrame">행사</a></button>
+                <button><a href="../image/북춘한옥체험.png" target="detailFrame">지도</a></button>
+                </div>
+
+            </div>
+
+        </div>
+
+<div class="info-list">
+        <!-- <h3>화면</h3> -->
+                <iframe 
+                    src="../image/북춘한옥체험.png"
+                    name="detailFrame"
+                    title="북촌전통공예체험관"
+                    width="630"
+                    height="400"
+                    >
+                </iframe>
+
+                </div>
+        <!-- <ul >
+            <li>margin: 요소와 다른 요소 사이의 공간</li>
+            <li>border: 요소를 둘러싸는 선</li>
+            <li>padding: 콘텐츠와 테두리 사이의 공간</li>
+            <li>content: 실제 내용이 들어가는 영역</li>
+        </ul> -->
+    </div>
+
+            
+
+</body>
+
+</html>
