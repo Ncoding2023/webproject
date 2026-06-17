@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "맑은 고딕", Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+    padding: 40px;
+    color: #333333;
+}
+
+h1{
+    text-align: center;
+    color: #5c4033;
+    margin-bottom: 30px;
+}
+
+.card-list {
+    width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 25px;
+
+    background-color: white;
+    border: 1px solid #d6bfa8;
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0,0.12);
+}
+
+.card h2 {
+    color: #a65f28;
+    text-align: center;
+}
+
+.card p {
+    line-height: 1.7;
+    text-indent: 20px;
+}

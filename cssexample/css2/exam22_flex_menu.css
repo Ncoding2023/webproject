@@ -1,0 +1,47 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "맑은 고딕", Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+}
+
+header{
+    padding: 30px;
+    background-color: #2b6cb0;
+    color: white;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    
+    padding: 15px;
+    background-color: #1f4e79;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main    {
+    width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+p {
+    line-height: 1.7;
+}

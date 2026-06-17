@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "맑은 고딕", Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+    padding: 40px;
+    color: #333333;
+}
+
+h1{
+    text-align: center;
+    color: #2b6cb0;
+    margin-bottom: 30px;
+}
+
+.profile-list {
+    width: 700px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #d0d7de;
+    border-radius: 15px;
+}
+
+.profile-img {
+    width: 90xp;
+    height: 90xp;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: #eaf4ff;
+    border: 2px solid #2b6cb0;
+    border-radius: 50%;
+
+    font-size: 36px;
+}
+
+.profile-info h2 {
+    margin: 0 0 8px 0;
+    color: #1f4e79;
+}
+
+.profile-info p {
+    margin: 0;
+    line-height: 1.6;
+}

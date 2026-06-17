@@ -1,0 +1,116 @@
+    /* 기본 스타일 초기화 및 배경 설정 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Malgun Gothic', sans-serif;
+    color: #ffffff;
+    
+    /* 1. 배경 이미지 설정 */
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;         /* 화면을 꽉 채우도록 설정 */
+    background-position: center;   /* 이미지 중심을 가운데로 정렬 */
+    background-repeat: no-repeat;  /* 이미지 반복 안 함 */
+    background-attachment: fixed;  /* 스크롤 시 배경 고정 */
+    
+    /* 가독성을 위해 배경 위에 어두운 오버레이 효과 추가 */
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 전체 콘텐츠 감싸는 컨테이너 */
+.container {
+    max-width: 600px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 30px;
+    text-align: center;
+    /* 글씨가 잘 보이도록 부드러운 텍스트 그림자 추가 */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); 
+}
+
+/* 제목 스타일 */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* 부제목 및 본문 스타일 */
+.subtitle {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+/* 리스트 스타일 (기존 불릿 기호 오정렬 해결) */
+.feature-list {
+    list-style-type: disc;
+    display: inline-block; /* 부모 안에서 가운데 정렬을 유지하면서 왼쪽 정렬 효과 */
+    text-align: left;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.feature-list li {
+    font-size: 1.05rem;
+    margin-bottom: 10px;
+}
+
+/* 테이블 스타일 */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.1); /* 테이블 배경을 살짝 투명하게 처리 */
+    backdrop-filter: blur(5px); /* 배경을 살짝 흐리게 해서 고급스러운 느낌 부여 */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.info-table th, .info-table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.info-table th {
+    background-color: rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+}
+
+/* 💡 iframe을 감싸는 컨테이너 스타일 */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 화면 비율 유지 (요즘 영상/지도 표준 비율) */
+    height: 0;
+    margin-bottom: 30px;
+    
+    /* 배경 분위기와 어울리도록 테두리 효과 추가 */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); /* 입체감 있는 그림자 */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 반투명한 흰색 테두리 */
+}
+
+/* 💡 컨테이너 안에서 iframe이 꽉 차게 반응형으로 작동 */
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 하단 안내 문구 */
+.footer-text {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 20px;
+}

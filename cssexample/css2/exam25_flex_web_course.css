@@ -1,0 +1,219 @@
+/* 
+*{
+    box-sizing: border-box;
+}
+html, body {
+min-height: 100%;
+}
+body{
+    font-family: "맑은 고딕", Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+    color: #333333;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    padding: 40px 20px;
+    background-color: #5c4033;
+    color: white;
+    text-align: center;
+}
+
+header h1{
+    margin: 0 0 10px 0;
+    font-size: 34px;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    
+    padding: 15px;
+    background-color: #1f4e79;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main    {
+    width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+}
+
+p {
+    line-height: 1.7;
+}
+
+
+.card-list {
+    width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 25px;
+
+    background-color: white;
+    border: 1px solid #d6bfa8;
+    border-radius: 15px;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0,0.12);
+}
+
+.card h2 {
+    color: #a65f28;
+    text-align: center;
+}
+
+.card p {
+    line-height: 1.7;
+    text-indent: 20px;
+} */
+
+ /* 기본 박스 사이징 */
+* {
+    box-sizing: border-box;
+}
+
+/* html, body 기본 높이 */
+html, body {
+    min-height: 100%;
+}
+
+/* 본문 설정 */
+body {
+    font-family: "맑은 고딕", Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+    color: #333333;
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 헤더 스타일 */
+header {
+    padding: 40px 20px;
+    background-color: #5c4033; /* 사용자 주신 진한 브라운 */
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 34px;
+    letter-spacing: 2px;
+}
+
+/* 내비게이션 메뉴 */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin: 30px 0 40px 0;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #5c4033; /* 헤더 색상과 맞춘 따뜻한 계열 */
+    padding: 8px 18px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #5c4033;
+    color: white;
+}
+
+/* 섹션 제목 */
+.card-section h2 {
+    color: #5c4033;
+    font-size: 2.2em;
+    margin-bottom: 14px;
+    border-bottom: 2.5px solid #bda18a; /* 은은한 베이지톤 */
+    padding-bottom: 6px;
+}
+
+/* 카드 리스트 그리드 */
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* 카드 개별 스타일 */
+.card {
+    background-color: white;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card h3 {
+    color: #5c4033;
+    margin-bottom: 8px;
+    font-size: 1.4em;
+}
+.card p {
+    font-size: 1em;
+    color: #444444;
+    margin-bottom: 14px;
+    white-space: pre-line;
+}
+
+/* 학습 단계 강조 */
+.level {
+    display: inline-block;
+    background-color: #d7cfc2;
+    color: #5c4033;
+    font-weight: 700;
+    font-size: 0.95em;
+    padding: 4px 12px;
+    border-radius: 18px;
+    margin-bottom: 12px;
+}
+
+/* 리스트 스타일 */
+.card ul {
+    list-style-type: disc;
+    margin-left: 18px;
+    color: #555555;
+}
+.card ul li {
+    margin-bottom: 6px;
+    font-size: 0.95em;
+}
+
+/* 푸터 스타일 */
+footer {
+    text-align: center;
+    margin: 60px 0 20px;
+    font-size: 0.9em;
+    color: #7b7d7d;
+}

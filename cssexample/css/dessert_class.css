@@ -3,7 +3,7 @@ body {
     color: #fffdf7;
     margin: 30px;
 
-    background: #f8fff7 url(
+    background: url(
         https://th.bing.com/th/id/OIP.IiJN09clu8OcB6NDESCC3QHaHa?w=216&h=216&c=7&r=0&o=7&pid=1.7&rm=3
     ) no-repeat fixed center center /cover;
 }
@@ -23,7 +23,7 @@ h1 {
     border-color: #fff;
     border-radius: 15px;
 
-    /* background-color: #fffdf8; */
+    background-color: #f18b2b;
 }
 
 .title {
