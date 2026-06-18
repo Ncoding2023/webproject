@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 개발 학습 페이지</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/html.css">
+</head>
+<body>
+    <header>
+        <h1>웹 개발 학습 페이지</h1>
+        <p>HTML,CSS,JavaScript를 학습하는 공간입니다.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">홈</a>
+        <a href="html.html">HTML</a>
+        <a href="css.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="gallery.html">학습 갤러리</a>
+    </nav>
+
+    <main class="html-main">
+         <h2>HTML 심화 학습</h2>
+
+  <section>
+    <h3>시맨틱 태그</h3>
+    <p>웹 문서의 구조와 의미를 명확히 해주는 태그들이에요.</p>
+    <ul>
+      <li><code>&lt;article&gt;</code>: 독립된 콘텐츠 단위</li>
+      <li><code>&lt;section&gt;</code>: 주제별 구분 구역</li>
+      <li><code>&lt;nav&gt;</code>: 내비게이션 메뉴</li>
+      <li><code>&lt;aside&gt;</code>: 보조 콘텐츠</li>
+      <li><code>&lt;footer&gt;</code>: 하단 정보</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>폼(Form) 요소</h3>
+    <p>사용자 입력을 받을 때 쓰는 태그들이에요.</p>
+    <form>
+      <label for="username">이름:</label>
+      <input type="text" id="username" name="username" placeholder="이름을 입력해 주세요" />
+
+      <label for="email">이메일:</label>
+      <input type="email" id="email" name="email" placeholder="example@mail.com" />
+
+      <label for="message">메시지:</label>
+      <textarea id="message" name="message" rows="4" placeholder="메시지를 작성해 주세요"></textarea>
+
+      <button type="submit">전송</button>
+    </form>
+  </section>
+
+  <section>
+    <h3>테이블 심화</h3>
+    <p>복잡한 표도 쉽게 만들 수 있어요.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>내용</th>
+          <th>상태</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2026-06-18</td>
+          <td>HTML 문서 작성</td>
+          <td>완료</td>
+        </tr>
+        <tr>
+          <td>2026-06-19</td>
+          <td>CSS 스타일 적용</td>
+          <td>진행 중</td>
+        </tr>
+        <tr>
+          <td>2026-06-20</td>
+          <td>자바스크립트 기본</td>
+          <td>예정</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- <section>
+    <h3>멀티미디어 활용</h3>
+    <p>영상, 오디오 태그로 멋지게 꾸며보세요!</p>
+    <video controls width="100%" style="max-width: 600px; border-radius: 8px;">
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+      영상 태그를 지원하지 않는 브라우저입니다.
+    </video>
+  </section> -->
+    </main>
+
+    <footer>
+        <p>Copyright 2026. Web Site</p>
+    </footer>
+    
+</body>
+</html>

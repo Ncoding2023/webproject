@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+}
+
+body {
+    font-family: "맑은 고딕", Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f7fa;
+    color: #333;
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+header {
+    padding: 30px;
+    background-color: #2b6cb0;
+    color: white;
+    text-align: center;
+}
+
+header h1{
+    margin-top: 0;
+}
+
+nav {
+    padding: 15px;
+    background-color: #1f4e79;
+
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    width: 1000px;
+    margin: 30px auto;
+}
+
+
+h2, h3 {
+    color: #2b6cb0;
+}
+
+p   {
+    line-height: 1.7;
+}
+
+footer {
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}

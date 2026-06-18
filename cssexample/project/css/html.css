@@ -1,0 +1,88 @@
+.html-main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #e8f4fc; /* 하늘색 연한 배경 */
+  color: #136ab8; /* 진한 파란색 글씨 */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(19, 106, 184, 0.3);
+  font-family: '맑은 고딕', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.html-main h2 {
+  border-bottom: 3px solid #136ab8;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+}
+
+.html-main h3 {
+  color: #0f4a7a;
+}
+
+.html-main p {
+  font-size: 1.1em;
+}
+
+.html-main ul {
+  margin-left: 20px;
+  color: #254e7b;
+}
+
+.html-main ul li {
+  margin-bottom: 8px;
+  font-size: 1em;
+}
+
+.html-main form {
+  margin-top: 15px;
+  max-width: 400px;
+}
+
+.html-main form label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+.html-main form input[type="text"],
+.html-main form input[type="email"],
+.html-main form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border: 1px solid #136ab8;
+  border-radius: 4px;
+}
+
+.html-main form button {
+  margin-top: 15px;
+  background-color: #136ab8;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.html-main form button:hover {
+  background-color: #0f4a7a;
+}
+
+.html-main table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 15px;
+  color: #136ab8;
+}
+
+.html-main th, .html-main td {
+  border: 1px solid #a3c1e8;
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.html-main thead {
+  background-color: #cae4fc;
+}

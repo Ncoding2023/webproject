@@ -1,0 +1,104 @@
+  /* 기본 바탕 & 박스 모델 */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: "맑은 고딕", Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #2e3d25; /* 자연스러운 진한 초록 계열 */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 헤더 스타일 */
+  header {
+    /* background-color: #5c4033; */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+  }
+
+  header h1 {
+    margin: 0 0 8px 0;
+    font-size: 2.8em;
+    letter-spacing: 2px;
+  }
+
+  header p {
+    margin: 0;
+    font-size: 1.2em;
+    opacity: 0.85;
+  }
+
+  /* 내비게이션 바 */
+  nav {
+    /* background-color: #7a5a44; */
+    padding: 12px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1em;
+    padding: 6px 14px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover,
+  nav ul li a:focus {
+    background-color: #5c4033;
+    outline: none;
+  }
+
+  
+  /* main 영역 (수업 내용 작업 공간) */
+  main.css-main {
+    flex: 1;
+    max-width: 900px;
+    margin: 40px auto 60px;
+    background-color: #e8f0d1; /* 연한 연두색 배경 */
+    padding: 30px 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(92, 64, 51, 0.2);
+    color: #2e3d25;
+    line-height: 1.6;
+  }
+
+  main.css-main h2 {
+    margin-top: 0;
+    font-size: 2em;
+    border-bottom: 3px solid blueviolet;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+
+  main.css-main p {
+    font-size: 1.1em;
+  }
+
+  main.css-main ul {
+    margin-left: 20px;
+    margin-top: 10px;
+    color: #3f5b30;
+  }
+
+  main.css-main ul li {
+    margin-bottom: 8px;
+    font-size: 1em;
+  }

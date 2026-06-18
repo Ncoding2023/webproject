@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 개발 학습 페이지</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/javascript.css">
+</head>
+<body>
+    <header>
+        <h1>웹 개발 학습 페이지</h1>
+        <p>HTML,CSS,JavaScript를 학습하는 공간입니다.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">홈</a>
+        <a href="html.html">HTML</a>
+        <a href="css.html">CSS</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="gallery.html">학습 갤러리</a>
+    </nav>
+
+    <main class="javascript-main">
+        <section>
+            <h2>JavaScript</h2>
+                <p>자바스크립트는 웹 페이지를 더 멋지고 재미있게 만들어 주는 프로그래밍 언어입니다.</p>
+  <p>여기서는 기본 개념과 간단한 예제를 함께 공부해봐요!</p>
+
+        </section>
+                    
+        <h2>주요 개념</h2>
+  <ul>
+    <li><strong>변수</strong>: 데이터를 저장하는 상자예요. <code>let</code>, <code>const</code>가 대표적이에요.</li>
+    <li><strong>함수</strong>: 일을 수행하는 코드 묶음. 필요할 때 호출해 사용해요.</li>
+    <li><strong>조건문</strong>: 상황에 따라 다른 동작을 하게 해줘요. <code>if</code>, <code>else</code>가 있어요.</li>
+    <li><strong>반복문</strong>: 같은 작업을 여러 번 반복할 때 사용해요. <code>for</code>, <code>while</code> 등이 있죠.</li>
+  </ul>
+
+  <h2>간단한 예제</h2>
+  <pre>
+    // 버튼 누르면 인사말 출력하는 코드
+    function sayHello() {
+      const name = prompt('이름을 알려주세요!');
+      if(name) {
+        document.getElementById('output').textContent = name + '님, 안녕하세요!';
+      } else {
+        document.getElementById('output').textContent = '이름이 없으면 인사할 수 없어요!';
+      }
+    }
+  </pre>
+  <button onclick="sayHello()">인사하기</button>
+
+  <div id="output"></div>
+    </main>
+
+    <footer>
+        <p>Copyright 2026. Web Site</p>
+    </footer>
+    
+</body>
+</html>
