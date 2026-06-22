@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-자바스크립트 개요</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/01-javascript-basic.css">
+
+</head>
+<body>
+    <header class="page-header">
+        <p class="chapter">JavaScript</p>
+        <h1>3.1 JavaScript의 시작</h1>
+        <p>
+            HTML은 웹 페이지의 구조를 정의하고, CSS는 그 구조에 스타일을 입히는 역할을 한다.
+            하지만 HTML과 CSS만으로는 사용자 입력 처리, 데이터 변경, 복잡한 상호작용과 같은
+            동적인 기능을 구현하는 데 한계가 있다. 이러한 동적인 기능은 주로 자바스크립트가 담당한다.
+        </p>
+    </header>
+
+    <main>
+        <section class="lesson-section">
+            <h2>3.1.1 프로그래밍과 웹 코딩</h2>
+            <p>
+                자바스크립트는 HTML과 CSS로 만든 웹 페이지에 동적인 기능과 사용자 상호작용을 추가할 수 있게 해주는
+                웹 개발의 핵심 프로그래밍 언어이다.
+            </p>
+            <p>
+                별도의 컴파일 과정 없이 브라우저에서 실행할 수 있으며, 웹 코딩뿐만 아니라 일반적인 프로그래밍 사고와
+                논리적인 문제 해결 능력을 기르는 데도 도움이 된다.
+            </p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.1.2 자바스크립트의 주요 특징</h2>
+            <p>자바스크립트의 주요 특징은 다음과 같다.</p>
+
+            <div class="feature-list">
+                <article>
+                    <h3>① 웹 개발을 위한 프로그래밍 언어</h3>
+                    <p>
+                        자바스크립트는 HTML, CSS와 함께 웹 페이지를 구성하는 핵심 기술 중 하나이며,
+                        웹 페이지에 동적인 기능을 추가하는 역할을 한다.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>② 스크립트 언어</h3>
+                    <p>
+                        자바스크립트는 브라우저에 내장된 자바스크립트 엔진을 통해 코드가 해석되어 실행된다.
+                        이러한 특성 때문에 일반적으로 스크립트 언어로 분류된다.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>③ 이벤트 기반 처리</h3>
+                    <p>
+                        사용자의 클릭, 입력, 스크롤과 같은 이벤트를 감지하고, 이벤트가 발생했을 때 미리 작성한 함수를 실행할 수 있다.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>④ ECMAScript 표준</h3>
+                    <p>
+                        ECMAScript는 자바스크립트의 표준을 정의한 명세이다. 일반적으로 ES라고 줄여 부르며,
+                        ES6는 2015년에 발표된 대표적인 버전이다.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.1.3 JavaScript 구현 방법</h2>
+            <p>
+                자바스크립트 코드는 HTML 문서 안에 직접 작성할 수도 있고,
+                별도의 <code>.js</code> 파일로 분리하여 작성할 수도 있다.
+            </p>
+
+            <article class="method-card">
+                <h3>1번 inline 방식</h3>
+                <p>HTML 태그의 이벤트 속성에 자바스크립트 코드를 직접 작성하는 방식이다.</p>
+
+                <pre><code>&lt;태그명 이벤트속성="실행할 자바스크립트 코드"&gt;
+                    화면에 표시할 내용
+                &lt;태그명&gt;</code></pre>
+
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <button type="button" onclick="alert('인라인 방식으로 실행한 알림창입니다.')">
+                        인라인 알림창 출력
+                    </button>
+
+                    <button type="button" onclick="console.log('인라인 방식으로 콘솔에 출력했습니다.')">
+                        인라인 콘솔 출력
+                    </button>
+                </div>
+            </article>
+
+            <article class="method-card">
+                <h3>2번 internal 방식</h3>
+                <p>HTML 문서 안에 <code>&lt;script&gt;</code>태그를 작성하고 그 안에 코드를 작성하는 방식이다.</p>
+
+                <pre><code>&lt;script&gt;
+                    function 함수명() {
+                        실행문;
+                    }
+                &lt;/script&gt;</code></pre>
+
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <button type="button" onclick="showInternaMessage()">
+                        내부 알림창 출력
+                    </button>
+
+                    <button type="button" id="welcomButton">
+                        인사말 출력
+                    </button>
+                    <p id="welcomMessage">버튼을 클릭해 보세요.</p>
+                </div>
+            </article>
+
+            <article class="method-card">
+                 <h3>3번 external 방식</h3>
+                <p>자바스크립트 코드를 별도의 <code>&lt;js&gt;</code>파일로 작성하고,
+                    HTML 문서에서 <code>&lt;script src="파일명.js"&gt;&lt;/script&gt;</code>
+                </p>
+
+                <pre><code>&lt;script src="외부자바스크립트파일경로.js" defer&gt;&lt;/script&gt;</code></pre>
+
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <button type="button" onclick="showExternalMessage()">
+                        외부 알림창 출력
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.1.4 이벤트 기반 처리 예제</h2>
+            <p>
+                아래 예제는 버튼 클릭 이벤트가 발생했을 때 박스의 배경색을 변경하는 예제이다.
+            </p>
+            <pre><code>function 함수명(매개변수) {
+                선택한요소.style.CSS속석명 = 변경할값;
+            }</code></pre>
+
+            <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <div id="box" aria-label="색상 변경 박스"></div>
+                    <div class="button-group">
+                        <button type="button" onclick="changeColor('red')">red</button>
+                        <button type="button" onclick="changeColor('yellow')">yellow</button>
+                        <button type="button" onclick="changeColor('skyblue')">skyblue</button>
+                        <button type="button" onclick="resetColor()">초기화</button>
+                    </div>
+                </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.1.5 명령형 방식과 선언형 방식</h2>
+            <p>
+                같은 결과를 만들더라도 코드를 작성하는 방식은 다를 수 있다.
+                아래 예제는 배열에서 짝수만 추출하는 코드를 명령형 방식과 선언형 방식으로 비교한 것이다.
+            </p>
+
+            <div class="note-box">
+                <p><strong>개념 정리</strong></p>
+                <p>
+                    <strong>명령형 방식</strong>은 원하는 결과를 얻기 위해 어떤 순서로 처리할지 과정을 하나씩 작성하는 방식이다.
+                    반복문, 조건문, 변수 변경 등을 직접 사용하여 처리 흐름을 구체적으로 작성한다.
+                </p>
+                <p>
+                    <strong>선언형 방식</strong>은 처리 과정보다 어떤 결과를 얻을지에 초점을 두는 방식이다.
+                    자바스크립트에서는 <code>filter()</code>, <code>map()</code>, <code>forEach()</code>와 같은 배열 메서드를 사용하여
+                    코드를 더 간결하게 작성할 수 있다.
+                </p>
+            </div>
+
+            <pre><code>const fruits = ['사과', '바나나', '딸기'];
+
+                for (let i = 0; i &lt; fruits.length; i++) {
+                    console.log(fruits);
+                }
+
+                fruits.forEach(function(fruit)) {
+                    console.log(fruit);
+                });
+            </code></pre>
+
+            <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <button type="button" onclick="showEvenNumbers()">
+                        짝수 출력
+                    </button>
+                    <p id="arrayResult">결과가 이곳에 출력된다.</p>
+                </div>
+        </section>
+    </main>
+
+    <script>
+        function showInternaMessage(params) {
+            alert('내부 script 태그에서 실행한 알림창입니다.')
+        }
+
+        const welcomButton = document.querySelector('#welcomButton');
+        const welcomMessage = document.querySelector('#welcomMessage');
+
+        welcomButton.addEventListener('click', function() {
+            welcomMessage.style.color = 'red';
+            welcomMessage.textContent = '안녕하세요. 자바스크립트 이벤트가 실행됩니다.';
+        });
+    </script>
+<script src="../js/01-javascript-basic.js"></script>
+</body>
+</html>

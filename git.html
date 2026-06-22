@@ -40,21 +40,25 @@
 
 <body>
 
-
     <h2>Git 설정 생성기</h2>
-
+    
     <label>GitHub User Name</label>
     <input type="text" id="username" placeholder="gitHub 이름">
-
+    
     <label>GitHub Email</label>
     <input type="text" id="email" placeholder="gitHub 이메일">
-
+    
     <label>GitHub Repository</label>
     <input type="text" id="repository" placeholder="gitHub 저장소 URL">
-
-    <button onclick="createGitConfig()">
+    
+    <label>GitHub branch</label>
+    <input type="text" id="branch" placeholder="gitHub branch">
+    
+    <!-- <button onclick="createGitConfig()">
         명령어 생성
-    </button>
+    </button> -->
+    <h3><span style="background-color: antiquewhite;">자리이동시,</span><br> 사용자 제거 하고 원격 저장소 제거 혹은 초기화한 이후, 사용자 설정 및 원격 저장소 연결</h3>
+    <p>상단에 입력창에 본인 gitHub 입력한 이후 사용, 메모장에 복사 해서 cmd로 해당 경로해서 사용</p>
 
     
 
@@ -84,9 +88,14 @@
     <button onclick="copyRemote()">
         원격 저장소 연결
     </button>
+    
 
     <button onclick="copyRemoteCheck()">
         원격 저장소 확인
+    </button>
+
+    <button onclick="copyInit()">
+        원격 저장소 초기화
     </button>
 
     <button onclick="copyRemoteRemove()">
@@ -108,11 +117,6 @@
     <button onclick="copyBranch()">
         현재 브랜치 확인
     </button>
-<!-- 
-    <button onclick="copyAdd()">
-        Add
-    </button> 
--->
 
     <button onclick="copyPush()">
         최초 Push
@@ -135,7 +139,41 @@
     </button>
 </div>
 
+<div class="section">
+    <h2>🌿 브랜치 관리</h2>
 
+    <button onclick="copyBranch()">
+        현재 브랜치 확인
+    </button>
+
+    <button onclick="copyBranchAll()">
+        전체 브랜치 확인
+    </button>
+
+    <button onclick="copyBranchCreate()">
+        브랜치 생성
+    </button>
+
+    <button onclick="copyBranchSwitch()">
+        브랜치 이동
+    </button>
+
+    <button onclick="copyBranchCreateSwitch()">
+        브랜치 생성 후 이동
+    </button>
+
+    <button onclick="copyBranchMain()">
+        main 브랜치로 변경
+    </button>
+
+    <button onclick="copyBranchDelete()">
+        브랜치 삭제
+    </button>
+
+    <button onclick="copyBranchMerge()">
+        브랜치 병합
+    </button>
+</div>
 
 <h3>생성 결과 (메모장에 복사해서 사용)</h3>
 
@@ -198,6 +236,15 @@ cmdkey /delete:git:https://github.com   //자격 증명 목록 삭제
                 `git config --global --list
 git config --global --show-origin user.name
 git config --global --show-origin user.email`;
+
+            copyText(cmd);
+        }
+
+
+        function copyInit() {
+
+            const cmd =
+                `git init`;
 
             copyText(cmd);
         }
@@ -350,6 +397,89 @@ function copyClone(){
 
     copyText(
 `git clone ${repository}`
+    );
+}
+
+// 브런치 
+function copyBranchAll() {
+
+    copyText(
+`git branch -a`
+    );
+}
+
+function copyBranchCreate() {
+
+    const branch =
+        document.getElementById("branch").value;
+
+    copyText(
+`git branch ${branch}
+
+git branch`
+    );
+}
+
+function copyBranchSwitch() {
+
+    const branch =
+        document.getElementById("branch").value;
+
+    copyText(
+`git branch
+
+git switch ${branch}`
+    );
+}
+
+function copyBranchCreateSwitch() {
+
+    const branch =
+        document.getElementById("branch").value;
+
+    copyText(
+`git switch -c ${branch}
+
+git branch`
+    );
+}
+
+function copyBranchMain() {
+
+    copyText(
+`git branch -M main
+
+git branch`
+    );
+}
+
+function copyBranchDelete() {
+
+    const branch =
+        document.getElementById("branch").value;
+
+    copyText(
+`git branch
+
+git branch -d ${branch} //로컬
+git push origin --delete ${branch}  //원격
+
+
+git branch`
+    );
+}
+
+function copyBranchMerge() {
+
+    const branch =
+        document.getElementById("branch").value;
+
+    copyText(
+`git switch main
+
+git merge ${branch}
+
+git branch`
     );
 }
 

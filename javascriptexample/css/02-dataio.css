@@ -1,0 +1,17 @@
+.sample-box {
+    padding: 8px;
+    border: 1px solid #bbb;
+    background-color: white;
+}
+
+.form-row {
+    margin-bottom: 8px;
+}
+
+.result-input {
+    width: 240px;
+}
+
+#titleResult {
+    min-height: 36px;
+}
