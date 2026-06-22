@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/02-dataio.css">
 </head>
+
 <body>
-    
+
     <header class="page-header">
         <p class="chapter">JavaScript</p>
         <h1>3.2 자바스크립트 데이터 입출력</h1>
@@ -59,12 +61,18 @@ document.write('문서에 출력할 내용');
                 <p><code>alert()</code>는 사용자에게 간단한 메시지를 알림창으로 보여준다.</p>
                 <div class="example-box">
                     <p class="example-title">실행예제</p>
-            </div>
+                    <button type="button" onclick="showAlert()">alert 확인</button>
+                </div>
             </article>
 
             <article class="method-card">
                 <h3>② console.log()</h3>
-
+                <p><code>console.log()</code>는 브라우저 개발자 도구의 콘솔 탭에 데이터를 보여준다.</p>
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <button type="button" onclick="showConsole()">콘솔 출력 확인</button>
+                    <div id="consoleResult" class="output-area">버튼 클릭 후 F12누르고 콘솔탭에서 확인</div>
+                </div>
             </article>
 
             <article class="method-card">
@@ -73,7 +81,10 @@ document.write('문서에 출력할 내용');
                     <code>document.write()</code>는 문서에 직접 내용을 출력한다. 단, 문서 로딩이 끝난 뒤 실행하면
                     기존 화면을 지울 수 있으므로 실무에서는 주의해서 사용해야 한다.
                 </p>
-
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <button type="button" onclick="documentWriteExample()">document.write()</button>
+                </div>
             </article>
         </section>
 
@@ -86,21 +97,56 @@ document.write('문서에 출력할 내용');
 
             <article class="method-card">
                 <h3>① textContent</h3>
+                <p>
+                    요소의 텍스트 내용을 읽거나 변경할 때 사용한다.
+                    HTML 태그는 해석하지 않고 문자 그대로 처리한다.
+                </p>
+                <pre><code>선택한요소.textContent = '변경할 텍스트 내용';</code></pre>
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <p id="textSample" class="sample-box">
+                        테스트 문장입니다. <br>
+                        <strong>안녕하세요?</strong>
+                    </p>
 
-
+                    <button type="button" onclick="getTextContent()">textContent로 읽어오기</button>
+                    <button type="button" onclick="setTextContent()">textContent로 변경하기</button>
+                    <div id="textResult" class="output-area">읽어온 결과가 이곳에 출력된다.</div>
+                </div>
             </article>
 
             <article class="method-card">
                 <h3>② innerHTML</h3>
 
+                <p>
+                    요소의 HTML 내용을 읽거나 변경할 때 사용한다.
+                    문자열로 작성한 태그를 실제 HTML 구조로 해석하여 화면에 표시한다.
+                </p>
+                <pre><code>선택한요소.innerHTML = 'HTML 태그를 포함한 변경 내용';</code></pre>
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <p id="htmlSample" class="sample-box">
+                        테스트 문장입니다. <br>
+                        <strong>안녕하세요?</strong>
+                    </p>
 
+                    <button type="button" onclick="getInnerHTML()">innerHTML로 읽어오기</button>
+                    <button type="button" onclick="setInnerHTML()">innerHTML로 변경하기</button>
+                    <div id="htmlResult" class="output-area">읽어온 결과가 이곳에 출력된다.</div>
+                </div>
             </article>
 
             <article class="method-card">
                 <h3>③ innerHTML 활용 예제</h3>
                 <p>요소의 내용과 HTML 구조를 함께 변경할 수 있다.</p>
-
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <h4 id="titleResult"></h4>
+                    <button type="button" onclick="printTitle()">h4 태그 출력</button>
+                </div>
             </article>
+
+
 
             <article class="method-card">
                 <h3>예제 1. 오늘의 학습 안내 변경하기</h3>
@@ -108,6 +154,15 @@ document.write('문서에 출력할 내용');
                     버튼을 클릭하면 학습 안내 문구가 변경된다.
                     단순한 텍스트 변경이므로 textContent를 사용한다.
                 </p>
+
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <p id="studyMassage" class="sample-box">
+                        오늘의 학습 내용이 이곳에 표시됩니다.
+                    </p>
+
+                    <button type="button" onclick="showStudyMassage()">학습 안내 보기</button>
+                </div>
 
             </article>
 
@@ -117,7 +172,16 @@ document.write('문서에 출력할 내용');
                     버튼을 클릭하면 공지사항 내용이 HTML 구조로 출력된다.
                     태그를 실제 HTML로 해석해야 하므로 innerHTML을 사용한다.
                 </p>
- 
+
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <p id="noticeArea" class="sample-box">
+                        공지사항이 이곳에 출력됩니다.
+                    </p>
+
+                    <button type="button" onclick="showNotice()">공지사항 보기</button>
+                </div>
+
             </article>
         </section>
 
@@ -125,32 +189,95 @@ document.write('문서에 출력할 내용');
             <h2>3.2.4 데이터 입력 구문</h2>
             <p>사용자로부터 데이터를 입력받는 대표적인 방법은 다음과 같다.</p>
 
+            <pre><code>const 확인결과 = confirm('확인 또는 취소를 선택할 메시지');
+const 입력결과 = prompt('사용자에게 입력을 요청할 메시지');
+const 입력값 = 선택한input요소.value;</code></pre>
 
             <article class="method-card">
                 <h3>① confirm()</h3>
- 
             </article>
+                <p><code>confirm()</code>은 확인 또는 취소를 선택할 수 있는 대화상자를 표시하고, 결과로 <code>true</code> 또는 <code>false</code>를 반환한다.</p>
+
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <button type="button" id="confirmButton" onclick="confirmColor()">confirm 확인하기</button>
+                </div>
 
             <article class="method-card">
                 <h3>② prompt()</h3>
                 <p><code>prompt()</code>는 사용자가 값을 입력할 수 있는 대화상자를 표시한다.</p>
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <button type="button" id="promptButton" onclick="promptUserInfo()">이름과 나이 입력</button>
+                    <div id="promptResult1" class="output-area">입력결과가 이곳에 출력</div>
 
+                    <button type="button" id="promptButton" onclick="promptName()">이름만 입력</button>
+                    <div id="promptResult2" class="output-area">입력결과가 이곳에 출력</div>
+                </div>
             </article>
+
+            
 
             <article class="method-card">
                 <h3>③ input 요소의 value</h3>
- 
+
+                <p><code>value</code> 속성을 사용하면 입력 요소에 작성된 값을 읽거나 변경할 수 있다.</p>
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <div class="form-row">
+                        <label for="userId">ID</label>
+                        <input type="text" id="userId">
+                    </div>
+
+                    <div class="form-row">
+                        <label for="userPw">Pw</label>
+                        <input  type="password" id="userPw">
+                    </div>
+
+                    <button type="button" onclick="printInputValue()">입력값 출력</button>
+                    <br>
+                    <label for="inputResult">결과</label>
+                    <input type="text" id="inputResult">
+                </div>
+
+
+
+
             </article>
 
             <article class="method-card">
                 <h3>예제 3. value 변경 예제</h3>
                 <p>두 입력 요소의 값을 서로 바꾸는 예제이다.</p>
 
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                        <input type="text" id="number1" placeholder="1번째">
+                        <button type="button" onclick="changInputValue()">chage</button>
+                        <input type="text" id="number2" placeholder="2번째">
+
+                </div>
             </article>
 
             <article class="method-card">
                 <h3>④ addEventListener로 이벤트 연결하기</h3>
+                <p>
+                    <!-- 버튼을 크릭했을 때 실행할 동작을 HTML의 <code>onclick</code> 속성에 직적
+                기존에는 문자열과 변수를 연결할 때 <code></code> 연산자를 사용했지만,
+                템플릿 문자열을 사용하면 더 간단하고 읽기 쉽게 작성할 수 있다. -->
+                </p>
 
+                <p>
+                    이 방법을 사용하면 HTML은 화면 구조를 담당하고,
+                    JavaScript 동작 처리를 담당하도록 역할을 분리할 수 있다.
+                </p>
+
+
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <input type="text" id="nameInput" placeholder="이름 입력">
+                    <button type="button" id="nameButton">이름 출력</button>
+                    <div id="templateResult" class="output-area">결과가 이곳에 출력된다.</div>
+                </div>
             </article>
         </section>
 
@@ -178,4 +305,5 @@ document.write('문서에 출력할 내용');
     </main>
     <script src="../js/02-dataio.js"></script>
 </body>
+
 </html>
