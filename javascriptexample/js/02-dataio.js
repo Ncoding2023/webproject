@@ -42,11 +42,15 @@ function printTitle() {
     const title = document.querySelector('#titleResult');
 
     title.innerHTML = 'Hello, JavaScript!'
-    title.style.color = 'orange';
-    title.style.border = '1px solid #000';
-    title.style.borderRadius = '10px';
-    title.style.padding = '#555';
-    title.style.width = 'fit-content';
+    // title.style.color = 'orange';
+    // title.style.border = '1px solid #000';
+    // title.style.borderRadius = '10px';
+    // title.style.padding = '#555';
+    // title.style.width = 'fit-content';
+
+    //  css에 해당 스타일을 부여할 클래스명으로 작성. js에서 코드 단축
+    title.classList.add("resultStyle");
+
 }
 
 function confirmColor() {

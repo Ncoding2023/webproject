@@ -15,3 +15,20 @@
 #titleResult {
     min-height: 36px;
 }
+
+.result-input {
+    width: 240px;
+}
+.resultStyle {
+    color : yellow;
+    border : 1px solid #000;
+    background-color: black;
+    border-radius : 10px ;
+    padding : #555;
+    width : fit-content;    
+}
+
+
+
+
+
