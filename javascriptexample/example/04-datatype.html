@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-자바스크립트 자료형</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/04-datatype.css">
+</head>
+<body>
+    <header class="page-header">
+        <p class="chapter">JavaScript</p>
+        <h1>3.4 변수와 자료형</h1>
+        <p>
+            자바스크립트에서 변수는 데이터를 저장하는 공간이고, 자료형은 변수에 저장되는 값의 종류를 의미한다.
+            자바스크립트는 변수 선언 시 자료형을 고정하지 않고, 저장되는 값에 따라 자료형이 결정된다.
+        </p>
+    </header>
+
+    <main>
+        <section class="lesson-section">
+            <h2>3.4.1 변수 선언</h2>
+            <p>
+                변수는 데이터를 저장하기 위해 사용하는 이름이 있는 공간이다.
+                자바스크립트에서는 <code>var</code>, <code>let</code>, <code>const</code>를 사용하여 변수를 선언할 수 있다.
+                현재는 주로 <code>let</code>과 <code>const</code>를 사용한다.
+            </p>
+
+
+            <div class="note-box">
+                <p><strong>개념 정리</strong></p>
+                <p>
+                    <code>let</code>은 값을 다시 대입할 수 있는 변수를 선언할 때 사용한다.
+                    같은 이름으로 재선언할 수 없고, 블록 레벨 스코프를 가진다.
+                </p>
+                <p>
+                    <code>const</code>는 값을 다시 대입하지 않을 변수를 선언할 때 사용한다.
+                    같은 이름으로 재선언할 수 없고, 재할당할 수 없으며 선언과 동시에 초기화 해야 한다.
+                </p>
+
+            </div>
+
+            <div class="note-box">
+                <p><strong>참고</strong></p>
+                <p>
+                    <code>var</code>는 예전부터 사용하던 변수 선언 방식이다.
+                    같은 이름으로 재선언할 수 있고, 함수 레벨 스코프를 가진다.
+                    이러한 특징 때문에 코드의 흐름을 예측하기 어려운 경우가 있어,
+                    새로운 코드를 작성할 때는 가급적 <code>let</code>과 <code>const</code>를 사용하는 것이 좋다.
+                </p>
+            </div>
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+                <button type="button" onclick="variableTest()">변수 확인</button>
+                <div id="variableResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.4.2 기본 자료형</h2>
+            <p>
+                기본 자료형은 하나의 값을 직접 표현하는 자료형이다.
+                대표적으로 문자열, 숫자, 논리값, <code>undefined</code>, <code>null</code>, <code>bigint</code>가 있다.
+            </p>
+
+            <div class="feature-list">
+                <article>
+                    <h3>string</h3>
+                    <p>
+                        문자열을 나타내는 자료형이다. 
+                        작은따옴표, 큰따옴표, 백틱으로 작성할 수 있다.
+                    </p>
+                </article>
+                <article>
+                    <h3>number</h3>
+                    <p>정수와 실수를 모두 나타내는 자료형이다.</p>
+                </article>
+                <article>
+                    <h3>boolean</h3>
+                    <p>
+                        <code>true</code> 또는 <code>false</code> 값을 가지는 논리 자료형이다.
+                    </p>
+                </article>
+                <article>
+                    <h3>undefined / null</h3>
+                    <p>
+                        <code>undefined</code>는 값이 할당되지 않은 상태이고, 
+                        <code>null</code>은 값이 없음을 의도적으로 표현한 값이다.
+                    </p>
+                </article>
+                <article>
+                    <h3>bigint</h3>
+                    <p>
+                        <code>bigint</code>는 <code>Number.MAX_SAFE_INTEGER</code>보다 큰 정수처럼,
+                        일반 <code>number</code> 자료형으로 정확하게 표현하기 어려운 큰 정수를 다룰 때 사용한다.
+                        숫자 뒤에 <code>n</code>을 붙여 작성한다.
+                    </p>
+                </article>
+            </div>
+            
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+                <button type="button" onclick="primitiveTypeTest()">기본 자료형 확인</button>
+                <div id="primitiveResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.4.3 참조 자료형</h2>
+            <p>
+                참조 자료형은 여러 값을 하나의 구조로 묶어 다룰 때 사용한다.
+                대표적으로 배열, 객체, 함수가 있다.
+                배열과 객체의 <code>typeof</code> 결과는 <code>object</code>이고,
+                함수의 <code>typeof</code> 결과는 <code>function</code>이다.
+            </p>
+
+            <pre><code>
+const 배열 변수 = [값1, 값2, 값3];
+const 객체변수 = {
+    속성명1: 값1,
+    속성명2: 값2
+};
+
+const 객체변수 = function(매개변수1, 매개변수2) {
+    return 반환값;
+};
+            </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+                <button type="button" onclick="referenceTypeTest()">참조 자료형 확인</button>
+                <div id="referenceResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.4.4 typeof 연산자</h2>
+            <p>
+                <code>typeof</code> 연산자는 값의 자료형을 문자열로 반환한다.
+                변수에 어떤 종류의 값이 저장되어 있는지 확인할 때 사용할 수 있다.
+            </p>
+
+            <pre><code>typeof 값;
+typeof 변수명;</code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+                <button type="button" onclick="typeofTest()">typeof 확인</button>
+                <div id="referenceResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.4.5 형 변환</h2>
+            <p>
+                형 변환은 값의 자료형을 다른 자료형으로 바꾸는 것을 의미한다.
+                사용자 입력값은 문자열로 처리되는 경우가 많으므로, 계산이 필요한 경우 숫자로 변환해야 한다.
+                 자바스크립트에서는 <code>Number()</code>, <code>String()</code>, 
+                <code>Boolean()</code> 등을 사용하여 자료형을 변환할 수 있다.
+            </p>
+            <pre><code>Number(문자열값);
+String(숫자값);
+Boolean(값);
+            </code></pre>
+
+
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+
+                <input type="text" id="convertInput" placeholder="값을 입력">
+                <button type="button" onclick="conversionTest()">형 변환 확인</button>
+
+                <div id="conversionResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+<!-- 두수의 합 -->
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+
+                <input type="text" id="numInput1" placeholder="첫번째 수">+
+                <input type="text" id="numInput2" placeholder="두번째 수">
+                <button type="button" onclick="numSubTest()">더하기</button>
+
+                <input id="numSubResult" class="output-box" placeholder="두 수의 합계"></input>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+                <h3>③ innerHTML 활용 예제</h3>
+                <p>요소의 내용과 HTML 구조를 함께 변경할 수 있다.</p>
+                <div class="example-box">
+                    <p class="example-title">실행예제</p>
+                    <h4 id="titleResult"></h4>
+                    <button type="button" onclick="printTitle()">h4 태그 출력</button>
+                </div>
+        </section>
+    </main>
+    <script src="../js/04-datatype.js"></script>
+</body>
+</html>
