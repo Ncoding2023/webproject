@@ -1,0 +1,90 @@
+.area {
+    width: 200px;
+    min-height: 80px;
+    margin: 6px 6px 6px 0;
+    padding: 8px;
+    border: 1px solid #333;
+    background-color: white;
+}
+
+.inline-area {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.number-list li {
+    margin-bottom: 6px;
+}
+
+.chechbox-group {
+    margin-bottom: 8px;
+}
+
+.menu-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.menu-item {
+    display: inline-block;
+    margin: 4px;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+}
+
+.memo-list {
+    min-height: 80px;
+    margin-bottom: 8px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.memo-item {
+    margin: 4px 0;
+    padding: 6px;
+    border-bottom: 1px solid #eee;
+}
+
+.empty-message {
+    margin: 0;
+    color: #777;
+}
+
+#memoInput {
+    width: 260px;
+}
+
+#chattingBg {
+    width: 360px;
+    height: 360px;
+    padding: 8px;
+    border: 1px solid #333;
+    background-color: rgb(178, 199, 217);
+    overflow: auto;
+}
+
+#chattingBg p {
+    margin: 12px 0;
+    text-align: right;
+}
+
+#chattingBg span{
+    display: inline-block;
+    max-width: 260px;
+    padding: 6px 8px;
+    background-color: rgb(254, 234, 51);
+    word-break: break-all;
+}
+
+#chattingInput {
+    width: 290px;
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    #chattingBg,
+    #chattingInput {
+        width: 100%;
+    }
+}

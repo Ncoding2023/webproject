@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03-DOM 요소 접근 방법</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/03-element.css">
+</head>
+
+<body>
+    <header class="page-header">
+        <p class="chapter">JavaScript</p>
+        <h1>3.3 DOM 요소 접근 방법</h1>
+        <p>
+            자바스크립트는 HTML 요소를 선택한 뒤,
+            선택한 요소의 내용, 속성, 스타일을 변경할 수 있다.
+        </p>
+    </header>
+
+    <main>
+        <section class="lesson-section">
+            <h2>3.3.1 DOM 개념</h2>
+            <p>
+                DOM(Document Object Model)은 HTML 문서를 자바스크립트에서 다룰 수 있도록
+                객체 형태로 표현한 구조이다.
+                브라우저는 HTML 문서를 읽고, 각 태그를 요소 객체로 만들어 계층 구조로 관리한다.
+            </p>
+
+            <p>
+                자바스크립트는 DOM을 이용하여 HTML 요소에 접근하고,
+                요소의 내용, 속성, 스타일 등을 변경할 수 있다.
+            </p>
+
+            <div class="note-box">
+                <p><strong>개념 정리</strong></p>
+                <p>
+                    자바스크립트에서 HTML 요소를 가져온다는 것은
+                    <strong>해당 요소를 나타내는 객체를 가져온다는 의미</strong>이다.
+                    가져온 요소 객체에 <code>textContent</code>, <code>innerHTML</code>,
+                    <code>style</code>, <code>value</code> 등을 사용하여 화면의 내용을 변경할 수 있다.
+                </p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.3.2 HTML 요소 접근 메서드</h2>
+            <p>DOM에서 요소를 가져올 때 사용하는 대표적인 메서드는 다음과 같다.</p>
+            <pre><code>document.getElementById('id속성값');
+document.getElementsByName('name속성값');
+document.getElementsByClassName('class속성값');
+document.getElementsByTagName('태그명');
+
+document.querySelector('CSS선택자');
+document.querySelectorAll('CSS선택자');</code></pre>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.3.3 id로 접근하기</h2>
+            <p>
+                <code>getElementById()</code>는 <code>id</code> 속성값을 이용하여 HTML 요소 하나를 가져오는 메서드이다.
+                <code>id</code>는 요소를 구분하기 위한 이름이므로, 한 문서 안에서 같은 <code>id</code>를 여러 번 사용하지 않는다.
+            </p>
+
+            <pre><code>
+                            const 변수명 = document.getElementById('id속성값');
+                            변수명.style.CSS속성명 = '변경할값';
+                        </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행예제</p>
+                <button type="button" onclick="accessId()">클릭할 때마다 배경색 변경</button>
+                <div id="box" class="area">id로 선택될 영역</div>
+            </div>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.3.4 class로 접근하기</h2>
+            <p>
+                <code>getElementsByClassName()</code>은 같은 <code>class</code> 값을 가진 HTML 요소들을 가져오는 메서드이다.
+                여러 요소가 반환되므로 배열처럼 인덱스를 사용하여 각 요소에 접근할 수 있다.
+            </p>
+
+            <pre><code>
+                    const 변수명 = document.getElementsByClassName('class속성값');
+                    변수명[인덱스].style.CSS속성명 = '변경할값';
+                </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행예제</p>
+                <div class="area inline-area classBox"></div>
+                <div class="area inline-area classBox"></div>
+                <div class="area inline-area classBox"></div>
+                <br>
+                <button type="button" onclick="accessClass()">배경색 변경</button>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.3.5 태그명으로 접근하기</h2>
+            <p>
+                <code>getElementsByTagName()</code>은 지정한 태그명을 가진 HTML 요소들을 가져오는 메서드이다.
+                여러 요소가 반환되므로 배열처럼 인덱스를 사용하여 각 요소에 접근할 수 있다.
+            </p>
+            <pre><code>
+            변수명 = document.getElementsByTagName('태그명');
+            </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행예제</p>
+                <ul class="number-list">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+                <br>
+                <button type="button" onclick="accessTagName()">배경색 변경</button>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.3.6 name으로 접근하기</h2>
+            <p>
+                <code>getElementsByName()</code>은 같은 <code>name</code> 값을 가진 HTML 요소들을 가져오는 메서드이다.
+                체크박스나 라디오 버튼처럼 관련된 입력 요소를 묶어 처리할 때 사용할 수 있으며,
+                여러 요소가 반환되므로 배열처럼 인덱스를 사용하여 각 요소에 접근할 수 있다.
+            </p>
+            <pre><code>
+                변수명 = document.getElementsByName('name속성값');
+            </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행예제</p>
+                <div class="chechbox-group">
+                    <label><input type="checkbox" name="hobby" value="여행">여행</label>
+                    <label><input type="checkbox" name="hobby" value="산책">산책</label>
+                    <label><input type="checkbox" name="hobby" value="음악감상">음악감상</label>
+                    <label><input type="checkbox" name="hobby" value="운동">운동</label>
+                    <label><input type="checkbox" name="hobby" value="맛집탐방">맛집탐방</label>
+                    <label><input type="checkbox" name="hobby" value="영화감상">영화감상</label>
+                </div>
+                <button type="button" onclick="accessName()">출력</button>
+                <div id="nameDiv" class="output-box">결과 출력</div>
+            </div>
+        </section>
+
+
+
+
+
+        <section class="lesson-section">
+            <h2>3.3.7 CSS 선택자로 접근하기</h2>
+            <p>
+                <code>querySelector()</code>와 <code>querySelectorAll()</code>은 CSS 선택자를 사용하여 HTML 요소를 가져오는 메서드이다.
+                <code>querySelector()</code>는 조건에 맞는 첫 번째 요소 하나를 가져오고,
+                <code>querySelectorAll()</code>은 조건에 맞는 모든 요소를 가져온다.
+            </p>
+            <pre><code>
+document.querySelector('CSS선택자');
+document.querySelectorAll('CSS선택자');
+            </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행예제</p>
+                <ul class="menu-list">
+                    <li class="menu-item">HTML</li>
+                    <li class="menu-item">CSS</li>
+                    <li class="menu-item">JavaScript</li>
+                    <li class="menu-item">React</li>
+                </ul>
+                <br>
+                <button type="button" onclick="selectFirstMenu()">1번째 메뉴 선택</button>
+                <button type="button" onclick="selectAllMenu()">전체 메뉴 선택</button>
+                <button type="button" onclick="resetMenu()">초기화</button>
+
+                <div id="selectorResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>예제 1. input 태그의 value 접근</h2>
+            <p>
+                입력 요소는 <code>value</code> 속성을 통해 사용자가 입력한 값을 읽거나 변경할 수 있다.
+            </p>
+
+            <div class="example-box">
+                <p class="example-title">실행예제</p>
+                <p id="studyMessage" class="sample-box">
+                    오늘의 학습 내용이 이곳에 표시
+                </p>
+                <br>
+                <button id="buttonValue" type="button" onclick="showStudyMessage()" value="study: DOM id teg tegName Name">학습 안내 보기</button>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>예제 2. 간단한 메모 작성하기</h2>
+            <p>
+                입력 요소는 <code>value</code> 속성으로 사용자가 입력한 값을 읽을 수 있다.
+                읽어 온 값을 다른 요소의 <code>innerHTML</code>에 추가하면 화면에 누적 출력할 수 있다.
+            </p>
+
+            <div class="example-box">
+                <p class="example-title">실행예제</p>
+                <div id="memoList" class="memo-list">
+                    <p class="empty-message">
+                    작성한 메모가 이곳에 추가된다.
+                    </p>
+                </div>
+                <input type="text" id="memoInput" placeholder="메모를 입력하세요." onkeyup="addEventListener(event)">
+                <button type="button" onclick="addMemo()">메모 추가</button>
+                <button type="button" onclick="clearMemo()">전체 삭제</button>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>예제 3. 간단한 채팅 화면 만들기</h2>
+            <p>
+                입력창에 작성한 값을 읽어 채팅 영역에 추가하고, Enter 키를 눌렀을 때도 같은 기능이 실행되도록 구성한 예제이다.
+            </p>
+
+            <pre><code>if (이벤트객체.key === 'Enter') {
+    실행할함수();
+}</code></pre>
+            <div class="example-box">
+                <p class="example-title">실행예제</p>
+                <div id="chattingBg">
+                    <p><span>추가 입력</span></p>
+                    <p><span>입력되는 채팅 출력</span></p>
+                </div>
+                <input type="text" id="chattingInput" placeholder="채팅 내용를 입력하세요." onkeyup="inputEvent(event)">
+                <button type="button" onclick="readValue()">입력</button>
+            </div>
+        </section>
+
+
+        <!-- 실습1~ 3 -->
+
+         <section class="lesson-section">
+            <h2>실습 1. 프로필 카드 수정하기</h2>
+
+            <div class="example-box">
+                <p class="profileName">이름</p>
+                <p class="profileJob">직업</p>
+                <p class="profileIntro">소개 문구</p>
+                
+                <button type="button" onclick="changeProfile()">프로필 변경</button>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>실습 2. 메뉴 항목 강조하기</h2>
+
+            <div class="example-box">
+                <ul>
+                    <li class="menu">HTML</li>
+                    <li class="menu">CSS</li>
+                    <li class="menu">JavaScript</li>
+                    <li class="menu">React</li>
+                </ul>
+                <br>
+
+                <button type="button" onclick="selectAllMenu()">전체 메뉴 선택</button>
+                <button type="button" onclick="resetMenu()">초기화</button>
+
+                <div id="selectorResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="../js/03-element.js"></script>
+</body>
+
+</html>
