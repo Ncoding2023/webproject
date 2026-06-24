@@ -1,0 +1,13 @@
+#standardBox {
+    width: 220px;
+    min-height: 60px;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid #333;
+    background-color: white;
+}
+
+#color-button {
+    min-width: 90px;
+}
+

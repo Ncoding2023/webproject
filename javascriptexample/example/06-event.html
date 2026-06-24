@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06-자바스크립트 이벤트</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/06-event.css">
+</head>
+<body>
+    <header class="page-header">
+        <p class="chapter">JavaScript</p>
+        <h1>3.6 이벤트</h1>
+        <p>
+            이벤트는 사용자의 클릭, 키보드 입력, 마우스 이동, 값 변경처럼 웹 페이지에서 발생하는 동작을 의미한다.
+            자바스크립트는 이벤트를 감지하고, 이벤트가 발생했을 때 미리 작성한 함수를 실행할 수 있다.
+        </p>
+    </header>
+
+    <main>
+        <section class="lesson-section">
+            <h2>3.6.1 이벤트와 이벤트 핸들러</h2>
+            <p>
+                이벤트 핸들러는 이벤트가 발생했을 때 실행되는 함수이다.
+                예를 들어 버튼을 클릭했을 때 메시지를 출력하는 함수가 이벤트 핸들러가 된다.
+            </p>
+
+            <pre><code>요소.addEventListener('이벤트명', function() {
+    실행문;
+});</code></pre>
+
+            <div class="note-box">
+                <p><strong>개념 정리</strong></p>
+                <p>
+                    이벤트는 발생한 동작이고, 이벤트 핸들러는 그 동작이 발생했을 때 실행되는 함수이다.
+                    <code>addEventListener()</code>를 사용하면 하나의 요소에 여러 이벤트 핸들러를 등록할 수 있다.
+                </p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.6.2 인라인 이벤트 모델</h2>
+            <p>
+                인라인 이벤트 모델은 HTML 태그의 이벤트 속성에 함수를 직접 작성하는 방식이다.
+                간단하게 사용할 수 있지만, HTML 구조와 JavaScript 코드가 섞일 수 있다.
+            </p>
+
+            <pre><code>
+                &lt;butto onclick="함수명()"&gt;버튼&lt;/butto"&gt;
+   </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+
+                <button type="button" onclick="inlineEventTest(this)">인라인 이벤트 확인</button>
+                <div id="inlineResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.6.3 고전 이벤트 모델</h2>
+            <p>
+                고전 이벤트 모델은 JavaScript에서 요소의 이벤트 속성에 함수를 대입하는 방식이다.
+                하나의 이벤트 속성에는 하나의 함수만 대입할 수 있으므로, 나중에 대입한 함수가 기존 함수를 덮어쓸 수 있다.
+            </p>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.6.4 표준 이벤트 모델</h2>
+            <p>
+                표준 이벤트 모델은 <code>addEventListener()</code>를 사용하여 이벤트를 등록하는 방식이다.
+                하나의 요소에 같은 종류의 이벤트를 여러 개 등록할 수 있어 유지보수에 유리하다.
+            </p>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.6.5 이벤트 객체</h2>
+            <p>
+                이벤트 객체는 이벤트가 발생했을 때 자동으로 전달되는 객체이다.
+                이벤트가 발생한 요소, 입력한 키, 마우스 위치 등 이벤트와 관련된 정보를 확인할 수 있다.
+            </p>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.6.6 이벤트 예제</h2>
+
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.6.7 입력 이벤트와 기본 이벤트 제거</h2>
+            <p>
+                입력 요소에서는 <code>input</code>, <code>change</code>, <code>keyup</code> 등의 이벤트를 사용할 수 있다.
+                또한 <code>preventDefault()</code>를 사용하면 링크 이동이나 폼 제출처럼 HTML 요소가 기본으로 수행하는 동작을 막을 수 있다.
+            </p>
+
+
+        </section>
+    </main>
+    <script src="../js/06-event.js"></script>
+</body>
+</html>
