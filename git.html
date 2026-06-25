@@ -414,9 +414,12 @@ function copyBranchCreate() {
         document.getElementById("branch").value;
 
     copyText(
-`git branch ${branch}
+`git branch ${branch}   //로컬
 
-git branch`
+git switch -c ${branch}     //이동후
+git push -u origin ${branch}    //원격
+
+git branch  //조회`
     );
 }
 

@@ -11,3 +11,16 @@
     min-width: 90px;
 }
 
+#nonsenseCard {
+    width: 300px;
+    height: 100px;
+    background-color: lightblue;
+    line-height: 100px;
+    text-align: center;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+    border: 2px solid #2980b9;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}

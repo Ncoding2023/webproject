@@ -161,8 +161,16 @@ arrowButton.addEventListener('click',() => {
     arrowResult.textContent = `화살표 함수 계산 결과 : 5 x 4 = ${multiply(5,4)}`;
 });
 
-thisButton.addEventListener('click', function(event) {
-    this.style.backgroundColor = 'pink';
+// thisButton.addEventListener('click', function(event) {
+//     this.style.backgroundColor = 'pink';
+//     event.target.style.color = 'white';
+//     arrowResult.textContent = '일반 함수에서 this는 이벤트가 발생한 요소를 가리킨다.';
+// });
+
+
+// =>는 this가 사용되지 않아 event.target으로 사용해야한다.
+thisButton.addEventListener('click', event => {
+    event.target.style.backgroundColor = 'pink';
     event.target.style.color = 'white';
     arrowResult.textContent = '일반 함수에서 this는 이벤트가 발생한 요소를 가리킨다.';
 });
