@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/06-event.css">
 </head>
+
 <body>
     <header class="page-header">
         <p class="chapter">JavaScript</p>
@@ -58,6 +60,14 @@
                 </div>
             </div>
 
+                       <div class="example-box">
+                <p class="example-title">실행 예제- h1~h6 태그로 Hello JavaScript를 출력</p>
+                <button type="button" onclick="printHeadingTags()">h1~h6 태그로 Hello JavaScript를 출력</button>
+                <div id="headingResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+
 
         </section>
 
@@ -68,6 +78,22 @@
                 하나의 이벤트 속성에는 하나의 함수만 대입할 수 있으므로, 나중에 대입한 함수가 기존 함수를 덮어쓸 수 있다.
             </p>
 
+            <pre><code>
+요소.onclick = function() {
+실행문;
+};
+   </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+
+                <button type="button" id="classicButton">고전 이벤트 확인</button>
+                <button type="button" id="removeClassicButton">고전 이벤트 제거</button>
+
+                <div id="classicResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
         </section>
 
         <section class="lesson-section">
@@ -76,6 +102,21 @@
                 표준 이벤트 모델은 <code>addEventListener()</code>를 사용하여 이벤트를 등록하는 방식이다.
                 하나의 요소에 같은 종류의 이벤트를 여러 개 등록할 수 있어 유지보수에 유리하다.
             </p>
+            <pre><code>요소.addEventListener('click', function() {
+    실행문;
+});
+   </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+
+                <button type="button" id="standardButton">표준 이벤트 확인</button>
+                <div id="standardBox" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+
+
 
         </section>
 
@@ -85,13 +126,61 @@
                 이벤트 객체는 이벤트가 발생했을 때 자동으로 전달되는 객체이다.
                 이벤트가 발생한 요소, 입력한 키, 마우스 위치 등 이벤트와 관련된 정보를 확인할 수 있다.
             </p>
+            <pre><code>요소.addEventListener('click', function(event) {
+    console.log(event.target);
+});
+   </code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
+
+                <button type="button" class="color-button" data-color="tomato">Tomato</button>
+                <button type="button" class="color-button" data-color="skyblue">Skyblue</button>
+                <button type="button" class="color-button" data-color="gold">Gold</button>
+                <div id="colorResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
 
         </section>
 
         <section class="lesson-section">
             <h2>3.6.6 이벤트 예제</h2>
 
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 좋아요 수 증가하기</p>
+                <span id="btn">♥️좋아요 <span id="count">0</span></span>
+            </div>
 
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 이미지 번갈아 보기</p>
+                <img src="../image/cat.png" alt="" id="changeImg"> <br>
+                 <button type="button" id="changeImgBtn">이미지 변경</button>
+                <div id="changeImgResult" class="output-box">현재 이미지는 고양이입니다.</div>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 실시간 글자 수 세기(이벤트:input)</p>
+                <input type="text" id="textInput">
+                <div id="inputResult" class="output-box">현재 글자수: <span>0</span></div>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 카드 뒤집기(이벤트: mouseover, mouseout)</p>
+                <div id="nonsenseCard">우리 수업시간에 자는 이유는?</div>
+                <div id="nonsenseResult" class="output-box">카드에 마우스를 올려 보세요.</div>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 테마 선택하기</p>
+                <select name="테마" id="themeSelect">
+                    <option value="">테마선택</option>
+                    <option value="white">밝은테마</option>
+                    <option value="black">어두운테마</option>
+                    <option value="green">초록테마</option>
+                </select>
+                <div id="themeSelectResult" class="output-box">선택한 테마가 적용</div>
+            </div>
         </section>
 
         <section class="lesson-section">
@@ -100,10 +189,24 @@
                 입력 요소에서는 <code>input</code>, <code>change</code>, <code>keyup</code> 등의 이벤트를 사용할 수 있다.
                 또한 <code>preventDefault()</code>를 사용하면 링크 이동이나 폼 제출처럼 HTML 요소가 기본으로 수행하는 동작을 막을 수 있다.
             </p>
+            <div class="example-box">
+                <p class="example-title">실행 예제</p>
 
+                <input type="text" id="textInput">
+                <div id="inputResult" class="output-box">입력한 내용을 이곳에 출력된다.</div>
+
+                <form id="joinForm" class="join-form">
+                    <input type="text" id="userName" placeholder="Name :">
+                    <button type="submit">Go</button>
+                </form>
+                <div id="formResult" class="output-box">from 출력된다.</div>
+
+                <a href="https://www.naver.com/" id="goNaver">Naver</a>
+            </div>
 
         </section>
     </main>
     <script src="../js/06-event.js"></script>
 </body>
+
 </html>
