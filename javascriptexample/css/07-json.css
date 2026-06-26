@@ -1,0 +1,132 @@
+.date-table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.date-table th, .date-table td{
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.date-table th{
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.concept-table td:first-child {
+    width: 22%;
+    text-align: center;
+    font-weight: bold;
+    background-color: #fafafa;
+}
+
+.example-sub {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.company-info {
+    margin-top: 20px;
+    padding: 20px 0;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.company-info h3 {
+    margin: 0 0 8px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.company-year {
+    margin: 0 0 20px;
+    color: #666;
+}
+
+.company-year span{
+    font-weight: bold;
+    color: #000;
+}
+
+.info-row {
+    display: flex;
+    gap: 30px;
+    padding: 10px 0;
+    border-Top: 1px solid #ccc;
+}
+
+.info-row strong {
+    width: 110px;
+    flex-shrink: 0;
+    color: #333;
+}
+.info-list {
+    display: flex;
+    flex-wap: wrap;
+    gap: 6px 18px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list::before {
+    content: "º";
+    color: #333;
+}
+
+.company-table {
+ width: 100%;
+ border-collapse: collapse;
+ table-layout: fixed;
+ margin-top: 12px;
+}
+
+.company-table th, .company-table td{
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    word-break: keep-all;
+}
+
+.company-table th{
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.subject-list li {
+    margin: 6px 0 6px 28px;
+    line-height: 1.5;
+}
+
+/* 예제풀이 디자인 급조하기 만듬 */
+.study-table {
+  width: 100%;
+  border-collapse: collapse; /* 셀 사이 간격 없애서 깔끔하게 */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.study-table th,
+.study-table td {
+  border: 1px solid #ddd; /* 연한 회색 테두리 */
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+  background: white;
+}
+
+.study-table thead th {
+  font-weight: bold; /* 헤더는 볼드체 */
+  background: white; /* 배경색 없음 */
+  text-align: center;
+}
+
+.study-table tbody td:nth-child(3) {
+  /* 3번째 열(내용) 긴 텍스트 처리 */
+  max-width: 400px; /* 최대 너비 제한 */
+  
+}
