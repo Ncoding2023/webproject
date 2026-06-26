@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 내장 객체</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/08-built-in-objects.css">
+</head>
+
+<body>
+    <header class="page-header">
+        <p class="chapter">JavaScript</p>
+        <h1>3.8 자바스크립트 내장 객체</h1>
+        <p>
+            내장 객체는 자바스크립트에서 기본적으로 제공하는 객체이다.
+            문자열 처리, 배열 관리, 날짜와 시간 처리, 수학 계산, 브라우저 제어 등에 사용할 수 있다.
+        </p>
+    </header>
+
+    <main>
+        <section class="lesson-section">
+            <h2>3.8.1 내장 객체의 개념</h2>
+            <p>
+                자바스크립트는 자주 사용하는 기능을 객체 형태로 미리 제공한다.
+                개발자는 이러한 내장 객체의 속성과 메서드를 사용하여 데이터를 쉽게 처리할 수 있다.
+            </p>
+
+            <pre><code>객체명.속성;
+객체명.메서드();</code></pre>
+
+            <div class="note-box">
+                <p>
+                    자주 사용하는
+                    <code>String</code>, <code>Date</code>, <code>Math</code>, <code>Array</code> 객체를 중심으로 학습한다.
+                </p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.8.2 String 객체</h2>
+            <p>
+                <code>String</code> 객체는 문자열 데이터를 다룰 때 사용한다.
+                문자열의 길이를 확인하거나, 특정 문자를 찾고, 대소문자를 변경하고, 문자열을 나누는 기능을 제공한다.
+            </p>
+
+            <pre><code>const text = "JavaScript";
+
+text.length;
+text.indexOf("찾을문자열");
+text.substring(시작인덱스, 종료인덱스);
+text.toLowerCase();
+text.toUpperCase();
+text.trim();
+text.split("구분자");</code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 이메일 주소 분석하기</p>
+                <p class="example-desc">
+                    입력한 이메일 주소의 공백를 제거하고 소문자로 변경한 뒤,
+                    마이디와 도메인 정보를 분리하여 출력한다.
+                </p>
+
+                <div class="input-line">
+                    <input type="text" id="emailInput" placeholder="예: JavaUser@Naver.com">
+                    <button type="button" id="emailButton">
+                        분석하기
+                    </button>
+                </div>
+                <div id="emailResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 휴대폰 번호 가운데 자리 숨기기</p>
+                <p class="example-desc">
+                    휴대폰 번호를 입력하 면 가운데 자리를 별표로 숨긴다
+                </p>
+
+                <div class="input-line">
+                    <input type="text" id="phoneInput" placeholder="예: 01012345678" value="01012345678">
+                    <button type="button" id="phoneButton">
+                        변환
+                    </button>
+                </div>
+                <div id="phoneResult" class="output-box">
+                    결과가 이곳에 출력된다.
+                </div>
+            </div>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.8.3 Date 객체</h2>
+            <p>
+                <code>Date</code> 객체는 날짜와 시간 정보를 다룰 때 사용한다.
+                현재 날짜를 가져오거나, 선택한 날짜의 연도, 월, 일, 요일 정보를 확인할 수 있다.
+            </p>
+
+            <pre><code>const today = new Date();
+
+- 문자열로 날짜 생성
+const selectedDate = new Date("2026-12-31");
+
+- 숫자로 날짜 생성
+: 월은 0부터 시작하므로 11은 12월을 의미한다.
+const selectedDate = new Date(2026, 11, 31); 
+
+selectedDate.getFullYear();
+selectedDate.getMonth() + 1;
+selectedDate.getDate();
+selectedDate.getDay();
+selectedDate.getTime();</code></pre>
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 예약일과 수령일 확인하기</p>
+                <p class="example-desc">
+                    예약 날짜를 선택하면 예약일과 예약일로부터 7일 후의 수령일을 출력한다.
+                </p>
+
+                <div class="input-line">
+                    <input type="date" id="reservationDate">
+                    <button type="button" id="reservationButton">수령일 확인</button>
+                </div>
+
+                <div id="reservationResult" class="output-box">결과가 이곳에 출력된다 .</div>
+            </div>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.8.4 Math 객체</h2>
+            <p>
+                <code>Math</code> 객체는 수학 계산에 필요한 속성과 메서드를 제공한다.
+                다른 객체와 달리 <code>new</code>로 생성하지 않고 <code>Math</code> 이름으로 바로 사용한다.
+            </p>
+
+            <pre><code>Math.random();
+Math.floor(숫자);
+Math.ceil(숫자);
+Math.round(숫자);
+Math.max(값1, 값2, 값3);
+Math.min(값1, 값2, 값3);</code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 오늘의 학습 주제 랜덤 추천</p>
+                <p class="example-desc">
+                    배열에 저장된 학습 주제 중 하나를 <code>Math.random()</code>과 <code>Math.floor()</code>를 사용하여 랜덤으로 선택한다.
+                </p>
+
+                <button type="button" id="topicButton">
+                    학습 주제 추천
+                </button>
+
+                <div id="topicResult" class="output-box">
+                    추천 결과가 이곳에 출력된다.
+                </div>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 좌석 번호 랜덤 배정</p>
+                <p class="example-desc">
+                    1번~30번까지의 좌석번호 중 하나를 랜덤 선택
+                </p>
+
+                <button type="button" id="seatButton">
+                    좌석 번호 뽑기
+                </button>
+
+                <div id="seatResult" class="output-box">
+                    좌석 번호 뽑기 출력된다.
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.8.5 Array 객체</h2>
+            <p>
+                <code>Array</code> 객체는 여러 개의 값을 순서대로 저장할 때 사용한다.
+                배열은 인덱스로 값에 접근하며, <code>push()</code>, <code>forEach()</code>, <code>join()</code>과 같은 메서드를 자주 사용한다.
+            </p>
+
+            <pre><code>const arrayName = [value1, value2, value3];
+
+arrayName.length;
+arrayName.push(newValue);
+
+arrayName.forEach(function(value) {
+    실행문;
+});
+
+arrayName.join("separator");</code></pre>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 참여자 명단 관리하기</p>
+                <p class="example-desc">
+                    입력한 이름을 배열에 추가하고, 참여자 명단을 목록과 문자열 형태로 출력한다.
+                </p>
+
+                <div class="input-line">
+                    <input type="text" id="memberInput" placeholder="예: 홍길동" value="홍길동">
+                    <button type="button" id="memberButton">참여자 추가</button>
+                </div>
+
+                <p id="memberCount" class="count-text">현재 참여자 0명</p>
+                <ul id="memberList" class="object-list output-box">
+                </ul>
+
+                <div id="memberText" class="output-box">
+                    참여자 명단이 이곳에 출력된다.
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="lesson-section">
+            <h2>3.8.6 브라우저 객체와 문서 객체</h2>
+            <p>
+                브라우저는 <code>window</code>, <code>location</code>, <code>history</code>, <code>navigator</code>,
+                <code>screen</code>과 같은 객체를 제공한다.
+                HTML 문서에 접근할 때는 <code>document</code> 객체를 사용한다.
+            </p>
+
+            <pre><code>window.alert("메시지");
+location.href;       // 현재 페이지 주소(URL) 알려주고, 바꾸면 페이지 이동 가능
+history.back();      // 브라우저 뒤로 가기 (뒤로 버튼 누른 효과)
+navigator.userAgent; // 현재 사용하는 브라우저와 기기 정보 문자열
+screen.width;        // 화면 가로 픽셀 수 (사용자 디스플레이 넓이)
+document.getElementById("아이디");</code></pre>
+
+            <div class="note-box">
+                <p>
+
+                    <code>setTimeout()</code>은 지정한 시간이 지난 뒤 함수를 한 번만 실행한다 .<br>
+                    <code>setInterval()</code>은 지정한 시간마다 함수를 반복 실행한다.
+                    반복 실행 중인 작업은 <code>clearInterval()</code>을 사용하여 중지할 수 있다.
+                    시간은 밀리초 단위로 작성하며, <code>1000</code>은 1초, <code>3000</code>은 3초를 의미한다
+
+                </p>
+            </div>
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 일정 시간 후 알림창 출력하기</p>
+                <p>버튼을 클릭하면 3초 후에 알림창이 화면에 표시된다.</p>
+
+                <button type="button" id="alertButton">
+                    버튼 클릭
+                </button>
+
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 실시간 시계 동작하기</p>
+                <p>
+                    시계동작 버튼을 클릭하면 1초마다 현재 시간이 출력되고,
+                    시계중지 버튼을 클릭하면 시간이 멈춘다.
+                </p>
+
+                <button type="button" id="startClock">시계동작</button>
+                <button type="button" id="stopClock">시계중지</button>
+
+                <div id="clockResult" class="output-box">
+                    시계가 이곳에 출력된다.
+                </div>
+            </div>
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 페이지 이동하기</p>
+                <p>
+                    버튼을 클릭하면 <code>location.href</code>를 사용하여 다른 페이지로 이동한다.
+                </p>
+
+                <button type="button" id="noticeButton">
+                    페이지 이동
+                </button>
+
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 썸네일 이미지 선택하기</p>
+                <p>작은 이미지를 클릭하면 큰이미지 영역에 표시</p>
+                <div style="display: flex;">
+                    <div style="display: flex; flex-direction: column;">
+                        <img id="image1" src="../image/image1.png" alt="" srcset="">
+                        <img id="image2" src="../image/image2.png" alt="" srcset="">
+                        <img id="image3" src="../image/image3.png" alt="" srcset="">
+                    </div>
+                    <img id="imageBax" src="" alt="" srcset="">
+                </div>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 1초 간격으로 새로운 이미지 보여주기</p>
+                <div id="imageTimeBax"></div>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 인증번호 생성하기</p>
+                <p>고객님의 인증번호는 00000입니다.</p>
+
+                <button type="button" id="certificationNum">
+                    인증번호
+                </button>
+                <button type="button" id="pageRefresh">
+                    페이지 새로고침
+                </button>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 강의 신청 양식</p>
+
+                <p class="example-desc">
+                    수강생 정보를 입력하고 강의를 선택하면 신청 내용을 확인할 수 있다.
+                </p>
+
+                <form id="courseForm" class="form-box">
+                    <div class="input-group">
+                        <label for="studentName">이름</label>
+                        <input type="text" id="studentName" placeholder="이름" value="에베베">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="courseName">강의명</label>
+                        <select id="courseName">
+                            <option value="">강의 선택</option>
+                            <option value="HTML/CSS 기초">HTML/CSS</option>
+                            <option value="JavaScript 기본">JavaScript</option>
+                            <option value="Oracle SQL">Oracle SQL</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <span>수강 형태</span>
+
+                        <label class="radio-label">
+                            <input type="radio" name="courseType" value="온라인">
+                            온라인
+
+                        </label>
+
+                        <label class="radio-label">
+                            <input type="radio" name="courseType" value="오프라인">
+                            오프라인
+                        </label>
+                    </div>
+                    <button type="submit">신청하기</button>
+                </form>
+
+                <div id="courseResult" class="output-box">
+                    신청 결과가 이곳에 출력된다.
+                </div>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 상담 예약 양식</p>
+
+                <p class="example-desc">
+                    수강생 정보를 입력하고 강의를 선택하면 신청 내용을 확인할 수 있다.
+                </p>
+<!-- value="에베베" 테스트용으로 값넣어둠 -->
+                <form id="counselForm" class="form-box">
+                    <div class="input-group">
+                        <label for="counselName">이름</label>
+                        <input type="text" id="counselName" placeholder="이름" value="에베베">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="counselDate">상담 날짜</label>
+                        <input type="date" id="counselDate" placeholder="">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="counselNames">상담 분야</label>
+                        <select id="counselNames">
+                            <option value="">상담 분야 선택</option>
+                            <option value="졸려">졸려</option>
+                            <option value="힘들어">힘들어</option>
+                            <option value="놀고싶어">놀고싶어</option>
+                            <option value="자고싶어">자고싶어</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="counselContent">상담 내용</label>
+                        <textarea name="counselContent" id="counselContent"></textarea>
+                    </div>
+                     
+                    <button type="submit">신청하기</button>
+                </form>
+
+                <div id="counselResult" class="output-box">
+                    신청 결과가 이곳에 출력된다.
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../js/08-built-in-objects.js"></script>
+</body>
+
+</html>
