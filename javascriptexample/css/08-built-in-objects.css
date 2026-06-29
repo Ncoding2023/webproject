@@ -91,3 +91,48 @@ display: block;
         width: 100%;
     }
 }
+
+/* 예제 - 카페 음료 주문서 작성하기 */
+/* 주문서 제목 행 스타일 */
+.order-header {
+  display: flex;                /* 가로 정렬 */
+  justify-content: space-between; /* 균등 간격 */
+  background-color: #f8f8f8;   /* 은은한 배경 */
+  font-weight: bold;            /* 글자 굵게 */
+  padding: 10px 15px;
+  border-bottom: 2px solid #ccc;
+  font-size: 1rem;
+}
+
+/* 각 주문 행 스타일 */
+.order-row {
+  display: flex;               /* 가로 정렬 */
+  justify-content: space-between; /* 간격 띄우기 */
+  align-items: center;           /* 세로 가운데 맞춤 */
+  padding: 8px 15px;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
+}
+
+/* 수량 입력 칸 스타일 */
+.drink-number {
+  width: 60px;
+  padding: 5px;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 합계 입력 칸 스타일 */
+.drink-total {
+  width: 90px;
+  padding: 6px 8px;
+  font-size: 1rem;
+  text-align: right;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  color: #555;
+  pointer-events: none; /* 읽기 전용 느낌 */
+}

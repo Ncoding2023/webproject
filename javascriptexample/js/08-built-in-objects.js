@@ -170,6 +170,61 @@ memberButton.addEventListener("click", function () {
 
     renderMemberList();
 });
+// 객체 리터럴을 배열에 담아 처리하기 - 상품 목록
+const products = [];
+
+const productName = document.getElementById("productName");
+const productPrice = document.getElementById("productPrice");
+const productButton = document.getElementById("productButton");
+const productCount = document.getElementById("productCount");
+const productList = document.getElementById("productList");
+const totalPrice = document.getElementById("totalPrice");
+
+function printProductList() {
+productList. innerHTML = "";
+
+let total = 0;
+
+products. forEach (function(product) {
+productList. innerHTML += `
+<div class="product-item">
+
+<strong>${product.name}</strong>
+<span>${product.price}원</span>
+</div>
+`;
+total += product.price;
+
+});
+
+    productCount.textContent = `현재 상품 ${products.length}개`;
+    totalPrice.textContent = `총 금액: ${total}원`;
+}
+
+productButton.addEventListener("click", function() {
+    const name = productName.value.trim();
+    const price = Number (productPrice.value);
+
+    if (name === ""|| productPrice.value === "" || isNaN(price)) {
+        alert("상품명과 가격을 모두 입력하세요.");
+        return;
+    }
+
+
+const product = {
+    name: name,
+    price: price
+};
+    products.push (product) ;
+
+    productName.value = "";
+    productPrice.value = "";
+    productName. focus();
+
+    printProductList();
+});
+
+
 
 // 3.8.6 브라우저 객체와 문서 객체</h2>
 // 실행 예제 - 일정 시간 후 알림창 출력하기</p>
@@ -295,7 +350,7 @@ const studentName = document.getElementById("studentName");
 const courseName = document.getElementById("courseName");
 
 // 이게정답인데. 왜 오류가 나지?
-// const courseType = document.querySelector('input[name="courseType"]:checked');
+// const courseType = document.querySelector("input[name='courseType']:checked");
 const courseType = document.querySelector('input[name="courseType"]');
 const courseResult = document.getElementById("courseResult");
 
@@ -306,11 +361,17 @@ courseForm.addEventListener('submit', function (event) {
     // const coursecourseFormValue = courseForm.value;
     const student = studentName.value.trim();
     const course = courseName.value;
-    const courseTypeValue = courseType.value;
+    // const courseTypeValue = courseType.value;
+
+    if (student ==="" ||course ==="" || courseType ==="") {
+        courseResult.textContent= " 이름, 강의명, 수강 형태를 모두 선택해주세요"
+        return;
+    }
+
     courseResult.innerHTML = `
     <p><strong>수강생:</strong> ${student}</p>
     <p><strong>강의명:</strong> ${course}</p>
-    <p><strong>수업 방식:</strong> ${courseTypeValue}</p>
+    <p><strong>수업 방식:</strong> ${courseType.value}</p>
     `;
 });
 
@@ -319,7 +380,7 @@ const counselForm = document.getElementById("counselForm");
 const counselName = document.getElementById("counselName");
 const counselDate = document.getElementById("counselDate");
 const counselContent = document.getElementById("counselContent");
-const counselNames = document.getElementById("counselNames");
+const counselType = document.getElementById("counselType");
 
 const counselResult = document.getElementById("counselResult");
 
@@ -328,13 +389,123 @@ counselForm.addEventListener('submit', function (event) {
     const counselNameV = counselName.value.trim();
     const counselDateV = counselDate.value;
     const counselContentB = counselContent.value;
-    const counselNamesV = counselNames.value;
+    const counselTypeV = counselType.value;
+
+if (counselNameV === "" || counselDateV === "" || counselContentB === "" || counselTypeV === "") {
+
+    counselResult.textContent = "모두 입력"
+    return;
+}
 
     counselResult.innerHTML = `
     <p><strong>이름:</strong> ${counselNameV}</p>
     <p><strong>상담 날짜:</strong> ${counselDateV}</p>
     <p><strong>상담 분야:</strong> ${counselContentB}</p>
-    <p><strong>상감 내용:</strong> ${counselNamesV}</p>
+    <p><strong>상담 내용:</strong> ${counselTypeV}</p>
     `;
 });
 
+
+// 예제. 카페 음료 주문서</h2>
+// 카페 음료 주문서
+const drinks = [
+    {
+        name: "아메리카노",
+        price: 3000,
+        numberInput: document.getElementById("drink1Number"),
+        totalInput: document.getElementById("drink1Total")
+
+    },
+    {
+        name: "카페라떼",
+        price: 4000,
+        numberInput: document.getElementById("drink2Number"),
+        totalInput: document.getElementById("drink2Total")
+
+    },
+    {
+        name: "딸기스무디",
+        price: 5500,
+        numberInput: document.getElementById("drink3Number"),
+        totalInput: document.getElementById("drink3Total")
+    }
+];
+// 해당 태그 값들을 배열로 값을 연동하며 해당 값으로 하단에 총 합계를 계산
+// 이렇게 하면 여러 아이디값으로도 구분하면서 통일 해서 사용이된다.
+// numberInput: document.getElementById("drink1Number"),
+// totalInput: document.getElementById("drink1Total") 해당값을 totalInput.value으로 연동
+
+const totalNumber = document.getElementById("totalNumber"); //총갯수
+const coffeeTotalPrice = document.getElementById("coffeeTotalPrice");   //총합계
+const printOrder = document.getElementById("printOrder");   //주문서 출력
+const resetOrder = document.getElementById("resetOrder");
+const orderResult = document.getElementById("orderResult");
+
+// 합계 계산 합수
+function updateOrder() {
+let numberSum = 0;
+let priceSum = 0;
+
+    drinks. forEach(function(drink) {
+        const count = Number (drink.numberInput.value);
+        // const count = drink.numberInput.value; 
+        // 이렇게 하면 1잔씩하면 3잔이 아니라 0111 이런식으로 종류별로 1개씩 문자열로 나옴.
+        const itemTotal = drink.price * count;
+
+        drink. totalInput.value = itemTotal;
+
+        numberSum += count;
+        priceSum += itemTotal;
+    });
+
+    totalNumber.value = numberSum;
+    coffeeTotalPrice.value = priceSum;
+}
+
+// 수량이 변경되면 바로 계산
+drinks. forEach(function(drink) {
+    //input 태그에 수량 변경하마 이벤트 발생
+    drink.numberInput.addEventListener("input", function() {
+    updateOrder();//수량 변동마다 합계 계산
+    });
+});
+
+// 주문서 출력 주문수량의 형식은 이상하지만 이렇게 안하면 아마 태그별로 값을 가져와야하니...
+// 어차피 자동 계산 콘솔로드까지밖에 못했음.
+printOrder.addEventListener("click", function() {
+    if (Number(totalNumber.value) === 0) {
+        alert("주문할 음료 수량을 입력하세요.");
+        return;
+    }
+    orderResult. innerHTML = `
+        <p>주문서가 출력되었습니다 .</p>
+
+        <div class="receipt-bottom">
+            <div class="receipt-line">
+                <strong>총 주문 수량</strong>
+                <span>${totalNumber.value}잔 </span>
+            </div>
+
+            <div class="receipt-line">
+                <strong>총 결제 금액</strong>
+                <span>${coffeeTotalPrice.value}원</span>
+            </div>
+
+            <p class="receipt-message">주문해 주셔서 감사합니다 .</p>
+        </div>
+        `;
+});
+
+// 초기화
+resetOrder.addEventListener("click", function() {
+    drinks. forEach(function(drink) {
+        drink.numberInput.value = 0;
+        drink. totalInput.value = 0;
+    });
+
+    totalNumber.value = 0;
+    coffeeTotalPrice.value = 0;
+
+    orderResult.textContent = "주문서가 이곳에 출력된다.";
+
+});
