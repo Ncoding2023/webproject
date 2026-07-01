@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 기초</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/11-jquery-basic.css">
+
+    <!-- jQuery CDN 방식으로 파일 연결 -->
+    <!-- 인터넷이 연결되어 있으면 별도 파일 다운로드 없이 jQuery를 사용할 수 있다. -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <header class="page-header">
+        <p class="chapter">JavaScript</p>
+        <h1>11. jQuery 기초</h1>
+        <p>
+            jQuery는 JavaScript로 DOM 요소 선택, 이벤트 처리, 스타일 변경, 애니메이션, Ajax 등을
+            간단하게 작성할 수 있도록 도와주는 JavaScript 라이브러리이다.
+        </p>
+    </header>
+
+    <main>
+        <section class="lesson-section">
+            <h2>11.1 jQuery란?</h2>
+            <p>
+                jQuery는 JavaScript 코드를 더 짧고 간단하게 작성할 수 있도록 만들어진 라이브러리이다.
+                예전 웹 프로젝트에서는 DOM 조작, 이벤트 처리, Ajax 요청 등을 처리할 때 많이 사용되었다.
+            </p>
+            <p>
+                최근에는 표준 JavaScript 기능이 많이 좋아지고 React 같은 UI 라이브러리나 Vue 같은 프레임워크 사용이 많아졌지만,
+                기존 웹 사이트나 관리자 페이지에서는 jQuery 코드가 아직 사용되는 경우가 많다.
+                따라서 jQuery를 새 프로젝트의 중심 기술로 사용하기보다는 기존 코드를 읽고 수정하기 위한 목적으로 학습하면 좋다.
+            </p>
+        </section>
+
+        <section class="lesson-section">
+            <h2>11.2 jQuery 파일 연결 방법</h2>
+            <p>
+                jQuery를 사용하려면 HTML 문서에 jQuery 파일을 먼저 연결해야 한다.
+                직접 다운로드한 파일을 연결할 수도 있고, CDN 주소를 이용하여 연결할 수도 있다.
+            </p>
+
+            <h3>CDN 방식</h3>
+            <pre><code>&lt;script src="https://code.jquery.com/jquery-3.7.1.min.js"&gt;&lt;/script&gt;</code></pre>
+
+            <h3>직접 다운로드한 파일 연결 방식</h3>
+            <pre><code>&lt;script src="../js/jquery-3.7.1.min.js"&gt;&lt;/script&gt;</code></pre>
+
+            <div class="note-box">
+                <p>
+                    jQuery 문법을 사용하려면 직접 작성한 JavaScript 파일보다 jQuery 파일을 먼저 연결해야 한다.
+                </p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>11.3 기본 문법</h2>
+            <p>
+                jQuery는 <code>$()</code> 함수를 사용하여 HTML 요소를 선택한다.
+                선택자 문법은 CSS 선택자와 거의 동일하다.
+            </p>
+
+            <pre><code>$('#아이디선택자')
+$('.클래스선택자')
+$('태그선택자')</code></pre>
+
+            <table class="method-table">
+                <thead>
+                    <tr>
+                        <th>jQuery 메서드</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>.text()</code></td>
+                        <td>요소의 텍스트 내용을 가져오거나 변경한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.html()</code></td>
+                        <td>요소의 HTML 내용을 가져오거나 변경한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.val()</code></td>
+                        <td>입력 요소의 값을 가져오거나 변경한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.css()</code></td>
+                        <td>요소의 CSS 스타일을 변경한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.addClass()</code></td>
+                        <td>요소에 클래스를 추가한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.removeClass()</code></td>
+                        <td>요소에서 클래스를 제거한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.toggleClass()</code></td>
+                        <td>클래스가 있으면 제거하고, 없으면 추가한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.on()</code></td>
+                        <td>이벤트를 등록한다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.show()</code></td>
+                        <td>숨겨진 요소를 보여준다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.hide()</code></td>
+                        <td>요소를 숨긴다.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.toggle()</code></td>
+                        <td>요소가 보이면 숨기고, 숨겨져 있으면 보여준다.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="lesson-section">
+            <h2>11.5 Ajax 개념</h2>
+            <p>
+                Ajax는 페이지 전체를 새로고침하지 않고 서버와 데이터를 주고받는 기술이다.
+                jQuery에서는 <code>$.ajax()</code> 메서드를 사용하여 서버에 요청을 보낼 수 있다.
+            </p>
+
+            <pre><code>// $.ajax(요청 정보).done(응답 성공 처리).fail(응답 실패 처리);
+// $.ajax({ }).done(function(data){ });
+
+$.ajax({
+    url: "요청 주소",
+    method: "GET",          // GET 또는 POST
+    data: {
+        name: "홍길동",      // 서버로 전달할 데이터
+        age: 20
+    },
+    dataType: "json"        // text, xml, json 중 하나
+}).done(function(data) {
+    // 통신이 성공했을 때 실행된다.
+    // 서버에서 응답한 데이터는 data 매개변수로 전달된다.
+    console.log(data);
+}).fail(function(xhr, textStatus) {
+    // 통신이 실패했을 때 실행된다.
+    console.log("요청 실패");
+    console.log(textStatus);
+});</code></pre>
+
+            <div class="note-box">
+                <p>
+                    <code>url</code>은 요청할 서버 주소이고, <code>method</code>는 요청 방식이다.
+                    <code>data</code>에는 서버로 보낼 값을 작성하고,
+                    <code>dataType</code>에는 서버에서 받을 데이터 형식을 작성한다.
+                </p>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>예제 1. jQuery로 요소 선택하고 글자 변경하기</h2>
+            <p>
+                <code>$()</code> 선택자로 요소를 선택한 후 <code>.text()</code>, <code>.html()</code>,
+                <code>.css()</code>를 사용하여 내용을 변경한다.
+            </p>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 글자 변경하기</p>
+                <p id="changeText" class="output-box">
+                    jQuery를 사용하면 요소의 내용을 쉽게 변경할 수 있다.
+                </p>
+                <button type="button" id="changeTextButton">
+                    글자 변경하기
+                </button>
+
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>예제 2. 버튼 클릭 이벤트 처리하기</h2>
+            <p>
+                <code>.on('click', function(){})</code> 형식으로 버튼 클릭 이벤트를 등록한다.
+                버튼을 클릭하면 숨겨진 안내 문장이 나타나거나 사라진다.
+            </p>
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 이벤트 처리하기</p>
+                <button type="button" id="eventButton">
+                    안내 문장 열고 달기
+                </button>
+                <p id="eventMessage" class="event-message">
+                    버튼 클릭 이벤트가 실행되었다.
+                </p>
+            </div>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 이벤트 처리하기</p>
+                <img src=" ../image/cat.png" alt="고양이 이미지" id="image" class="event-image">
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>예제 3. 클래스 추가/제거로 스타일 변경하기</h2>
+            <p>
+                jQuery의 <code>.addClass()</code>, <code>.removeClass()</code>, <code>.toggleClass()</code>를 사용하면
+                요소에 클래스를 추가하거나 제거하여 스타일을 변경할 수 있다.
+            </p>
+
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 클래스 변경하기</p>
+                <div id="styleBox" class="style-box">
+                    클래스 변경 대상
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="addClassButton">
+                        클래스 추가
+                    </button>
+
+                    <button type="button" id="removeClassButton">
+                        클래스 제거
+                    </button>
+
+                    <button type="button" id="toggleClassButton">
+                        클래스 토글
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="lesson-section">
+            <h2>예제 4. 입력값 읽고 화면에 출력하기</h2>
+            <p>
+                입력 요소의 값은 <code>.val()</code> 메서드로 가져올 수 있다.
+                가져온 값은 <code>.text()</code> 또는 <code>.html()</code>을 사용하여 화면에 출력할 수 있다.
+            </p>
+            <div class="example-box">
+                <p class="example-title">실행 예제 - 입력값 출력하기</p>
+
+                <div class="input-line">
+                    <label for="userName">이름 입력</label>
+                    <input type="text" id="userName" placeholder="이름을 입력하세요">
+                    <button type="button" id="printNameButton">
+                        출력하기
+                    </button>
+
+                </div>
+
+                <p id="nameResult" class="result-text output-box">
+                    입력한 이름이 이곳에 출력된다.
+                </p>
+            </div>
+
+        </section>
+    </main>
+    <script src="../js/11-jquery-basic.js"></script>
+</body>
+
+</html>
