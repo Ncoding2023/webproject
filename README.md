@@ -3,12 +3,12 @@
 브랜치 구성
 main        : 최종 배포
 develop     : 개발 통합
-
+```text
 feature/{예시}
 feature/refrigerator
 feature/airconditioner
 feature/dehumidifier
-
+```
 작업 순서
 develop
     ↓
