@@ -10,11 +10,7 @@ feature/airconditioner
 feature/dehumidifier
 ```
 작업 순서
-develop
-    ↓
-feature/본인기능
-    ↓
-develop Merge
+develop    ->    feature/본인기능    ->    develop Merge
 
 ❌ main 브랜치에 직접 Push 금지
 조장이 develop에서 main으로 직접할것
